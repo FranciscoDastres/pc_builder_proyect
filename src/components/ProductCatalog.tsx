@@ -38,13 +38,13 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
     <div className="flex flex-col h-full">
       {/* Search */}
       <div className="mb-3 relative">
-        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">🔍</span>
+        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">🔍</span>
         <input
           type="text"
           placeholder="Buscar componente..."
           value={search}
           onChange={e => setSearch(e.target.value)}
-          className="w-full bg-gray-900 border border-gray-700 rounded-xl pl-9 pr-4 py-2.5 text-sm text-gray-100 placeholder-gray-600 focus:outline-none focus:border-sky-500 transition-colors"
+          className="w-full bg-white border border-gray-300 rounded px-9 py-2.5 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors shadow-sm"
         />
       </div>
 
@@ -52,7 +52,11 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
       <div className="flex gap-1.5 flex-wrap mb-3">
         <button
           onClick={() => setActiveCategory('all')}
-          className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${activeCategory === 'all' ? 'bg-sky-700 text-white' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}`}
+          className={`px-3 py-1.5 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
+            activeCategory === 'all'
+              ? 'bg-blue-600 text-white border-blue-600'
+              : 'bg-white text-gray-600 border-gray-300 hover:border-blue-400 hover:text-blue-600'
+          }`}
         >
           Todos
         </button>
@@ -60,7 +64,11 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
           <button
             key={slot}
             onClick={() => setActiveCategory(slot as ComponentSlot)}
-            className={`px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1 ${activeCategory === slot ? 'bg-sky-700 text-white' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}`}
+            className={`px-2.5 py-1.5 rounded text-xs font-bold uppercase tracking-wide transition-colors border flex items-center gap-1 ${
+              activeCategory === slot
+                ? 'bg-blue-600 text-white border-blue-600'
+                : 'bg-white text-gray-600 border-gray-300 hover:border-blue-400 hover:text-blue-600'
+            }`}
           >
             <span>{categoryIcons[slot]}</span>
             <span className="hidden sm:inline">{slotLabels[slot]}</span>
@@ -75,10 +83,10 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
           if (!items.length) return null
           return (
             <div key={slot}>
-              <div className="flex items-center gap-2 mb-2 sticky top-0 bg-gray-950/95 py-1 z-10">
+              <div className="flex items-center gap-2 mb-2 sticky top-0 bg-gray-100/95 py-1 z-10">
                 <span className="text-base">{categoryIcons[slot]}</span>
-                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest">{slotLabels[slot]}</h3>
-                <span className="text-xs text-gray-700">({items.length})</span>
+                <h3 className="text-xs font-black text-gray-700 uppercase tracking-widest">{slotLabels[slot]}</h3>
+                <span className="text-xs text-gray-400">({items.length})</span>
               </div>
               <div className="space-y-2">
                 {items.map(p => (
