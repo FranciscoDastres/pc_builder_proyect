@@ -20,7 +20,7 @@ export function ProductCard({ product, compatible, selected, onAdd }: Props) {
     relative rounded-xl border p-3 cursor-grab active:cursor-grabbing transition-all duration-200
     ${isDragging ? 'opacity-40 scale-95' : ''}
     ${selected ? 'border-green-500 bg-green-950/40 cursor-default' : ''}
-    ${!selected && compatible ? 'border-violet-700/50 bg-gray-900 hover:border-violet-500 hover:bg-gray-800' : ''}
+    ${!selected && compatible ? 'border-sky-700/50 bg-gray-900 hover:border-sky-500 hover:bg-gray-800' : ''}
     ${!selected && !compatible ? 'border-gray-800 bg-gray-900/50 opacity-50 cursor-not-allowed' : ''}
   `
 
@@ -59,12 +59,12 @@ export function ProductCard({ product, compatible, selected, onAdd }: Props) {
       </div>
 
       <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-800">
-        <span className="text-violet-400 font-bold text-sm">${product.price}</span>
+        <span className="text-sky-400 font-bold text-sm">${product.price}</span>
         {compatible && !selected && onAdd && (
           <button
             onPointerDown={(e) => e.stopPropagation()}
             onClick={(e) => { e.stopPropagation(); onAdd() }}
-            className="text-xs bg-violet-700 hover:bg-violet-600 text-white px-2 py-1 rounded-lg transition-colors"
+            className="text-xs bg-sky-700 hover:bg-sky-600 text-white px-2 py-1 rounded-lg transition-colors"
           >
             + Agregar
           </button>
