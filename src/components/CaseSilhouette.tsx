@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useDroppable, useDraggable } from '@dnd-kit/core'
 import type { SelectedBuild, ComponentSlot, Product } from '../types'
-import { slotLabels } from '../data/products'
+import { slotLabels, slotOrder } from '../data/products'
 import { CaseIllustration } from './CaseIllustration'
 
 interface SlotProps {
@@ -145,7 +145,7 @@ interface Props {
   onRemove: (slot: ComponentSlot) => void
 }
 
-const slotPositions: ComponentSlot[] = ['case', 'motherboard', 'cpu', 'cooler', 'ram', 'gpu', 'storage', 'psu']
+const slotPositions = slotOrder as ComponentSlot[]
 
 export function CaseSilhouette({ build, activeSlot, issues, onRemove }: Props) {
   const issueSlots = new Set(issues.filter(i => i.severity === 'error').map(i => i.slot))
