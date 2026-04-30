@@ -44,7 +44,7 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
           placeholder="Buscar componente..."
           value={search}
           onChange={e => setSearch(e.target.value)}
-          className="w-full bg-gray-900 border border-gray-700 rounded-xl pl-9 pr-4 py-2.5 text-sm text-gray-100 placeholder-gray-600 focus:outline-none focus:border-violet-500 transition-colors"
+          className="w-full bg-gray-900 border border-gray-700 rounded-xl pl-9 pr-4 py-2.5 text-sm text-gray-100 placeholder-gray-600 focus:outline-none focus:border-sky-500 transition-colors"
         />
       </div>
 
@@ -52,7 +52,7 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
       <div className="flex gap-1.5 flex-wrap mb-3">
         <button
           onClick={() => setActiveCategory('all')}
-          className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${activeCategory === 'all' ? 'bg-violet-700 text-white' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}`}
+          className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${activeCategory === 'all' ? 'bg-sky-700 text-white' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}`}
         >
           Todos
         </button>
@@ -60,7 +60,7 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
           <button
             key={slot}
             onClick={() => setActiveCategory(slot as ComponentSlot)}
-            className={`px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1 ${activeCategory === slot ? 'bg-violet-700 text-white' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}`}
+            className={`px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1 ${activeCategory === slot ? 'bg-sky-700 text-white' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}`}
           >
             <span>{categoryIcons[slot]}</span>
             <span className="hidden sm:inline">{slotLabels[slot]}</span>
