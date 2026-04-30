@@ -68,63 +68,44 @@ export default function App() {
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
     >
-      <div style={{ minHeight: '100vh', background: '#030712', display: 'flex', flexDirection: 'column' }}>
+      <div className="min-h-screen bg-gray-950 flex flex-col">
         {/* Header */}
-        <header style={{
-          borderBottom: '1px solid #0c2a3e',
-          background: 'rgba(2,6,16,0.97)',
-          backdropFilter: 'blur(8px)',
-          position: 'sticky',
-          top: 0,
-          zIndex: 50,
-        }}>
-          <div style={{ maxWidth: 1600, margin: '0 auto', padding: '10px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-              {/* Alltec logo */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: 7, background: 'linear-gradient(135deg, #0369a1 0%, #0ea5e9 100%)', borderRadius: 8, padding: '7px 12px' }}>
+        <header className="border-b border-[#0c2a3e] bg-gray-950/[0.97] backdrop-blur sticky top-0 z-50">
+          <div className="max-w-[1600px] mx-auto px-6 py-[10px] flex items-center justify-between">
+            <div className="flex items-center gap-3.5">
+              <div className="flex items-center gap-[7px] bg-gradient-to-br from-[#0369a1] to-sky-500 rounded-lg px-3 py-[7px]">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="3" width="20" height="13" rx="2"/>
                   <path d="M8 21h8M12 16v5"/>
                 </svg>
-                <span style={{ fontSize: 13, fontWeight: 900, color: 'white', letterSpacing: '0.14em' }}>ALLTEC</span>
+                <span className="text-[13px] font-black text-white tracking-[0.14em]">ALLTEC</span>
               </div>
-              <div style={{ borderLeft: '1px solid #1e3a5f', paddingLeft: 14 }}>
-                <h1 style={{ margin: 0, fontSize: 14, fontWeight: 700, color: '#e2e8f0', lineHeight: 1 }}>PC Builder</h1>
-                <p style={{ margin: 0, fontSize: 11, color: '#475569' }}>Arrastra o haz clic en + para armar tu PC</p>
+              <div className="border-l border-[#1e3a5f] pl-3.5">
+                <h1 className="m-0 text-sm font-bold text-slate-200 leading-none">PC Builder</h1>
+                <p className="m-0 text-[11px] text-slate-600">Arrastra o haz clic en + para armar tu PC</p>
               </div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-              <span style={{ fontSize: 13, color: '#94a3b8' }}>
-                <span style={{ color: '#38bdf8', fontWeight: 700 }}>{Object.values(build).filter(Boolean).length}</span>
-                <span style={{ color: '#334155' }}>/8 componentes</span>
+            <div className="flex items-center gap-4">
+              <span className="text-[13px] text-slate-400">
+                <span className="text-sky-400 font-bold">{Object.values(build).filter(Boolean).length}</span>
+                <span className="text-slate-700">/8 componentes</span>
               </span>
               {totalPrice > 0 && (
-                <span style={{ fontSize: 15, color: '#38bdf8', fontWeight: 700 }}>${totalPrice.toLocaleString()}</span>
+                <span className="text-[15px] text-sky-400 font-bold">${totalPrice.toLocaleString()}</span>
               )}
             </div>
           </div>
         </header>
 
         {/* Main */}
-        <main style={{
-          flex: 1,
-          maxWidth: 1600,
-          margin: '0 auto',
-          width: '100%',
-          padding: '20px 16px',
-          display: 'grid',
-          gridTemplateColumns: '1fr 390px',
-          gap: 20,
-          height: 'calc(100vh - 61px)',
-          overflow: 'hidden',
-        }}>
+        <main className="flex-1 max-w-[1600px] mx-auto w-full px-4 py-5 grid grid-cols-[1fr_390px] gap-5 h-[calc(100vh-61px)] overflow-hidden">
           {/* Left: catalog */}
-          <div style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-            <div style={{ marginBottom: 10 }}>
-              <h2 style={{ margin: 0, fontSize: 13, fontWeight: 700, color: '#d1d5db' }}>Componentes en stock</h2>
-              <p style={{ margin: 0, fontSize: 11, color: '#4b5563' }}>Los componentes grises no son compatibles con tu selección actual</p>
+          <div className="flex flex-col overflow-hidden">
+            <div className="mb-2.5">
+              <h2 className="m-0 text-[13px] font-bold text-gray-300">Componentes en stock</h2>
+              <p className="m-0 text-[11px] text-gray-600">Los componentes grises no son compatibles con tu selección actual</p>
             </div>
-            <div style={{ flex: 1, overflow: 'hidden' }}>
+            <div className="flex-1 overflow-hidden">
               <ProductCatalog
                 products={allProducts}
                 build={build}
@@ -135,10 +116,10 @@ export default function App() {
           </div>
 
           {/* Right: builder */}
-          <div style={{ overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div className="overflow-y-auto flex flex-col gap-4">
             <div>
-              <h2 style={{ margin: 0, fontSize: 13, fontWeight: 700, color: '#d1d5db' }}>Tu Build</h2>
-              <p style={{ margin: '2px 0 0', fontSize: 11, color: '#4b5563' }}>
+              <h2 className="m-0 text-[13px] font-bold text-gray-300">Tu Build</h2>
+              <p className="mt-0.5 mb-0 text-[11px] text-gray-600">
                 {!build.case ? 'Empieza seleccionando un gabinete' : 'Arrastra componentes a los slots del gabinete'}
               </p>
             </div>
@@ -162,7 +143,7 @@ export default function App() {
 
       <DragOverlay>
         {dragging && (
-          <div style={{ transform: 'rotate(2deg) scale(1.05)', opacity: 0.92, width: 280 }}>
+          <div className="rotate-[2deg] scale-105 opacity-[0.92] w-[280px]">
             <ProductCard product={dragging} compatible={true} selected={false} />
           </div>
         )}
