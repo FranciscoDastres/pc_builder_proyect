@@ -46,8 +46,13 @@ export default function App() {
   const handleDragEnd = (e: DragEndEvent) => {
     setDragging(null)
     const product = e.active.data.current?.product as Product | undefined
+    const fromSlot = e.active.data.current?.fromSlot as ComponentSlot | undefined
     if (!product) return
     const overId = e.over?.id as string | undefined
+    if (fromSlot) {
+      if (!overId?.startsWith('slot-')) removeProduct(fromSlot)
+      return
+    }
     if (!overId?.startsWith('slot-')) return
     const slot = overId.replace('slot-', '') as ComponentSlot
     if (product.slot !== slot) return
@@ -66,30 +71,35 @@ export default function App() {
       <div style={{ minHeight: '100vh', background: '#030712', display: 'flex', flexDirection: 'column' }}>
         {/* Header */}
         <header style={{
-          borderBottom: '1px solid #1f2937',
-          background: 'rgba(3,7,18,0.9)',
+          borderBottom: '1px solid #0c2a3e',
+          background: 'rgba(2,6,16,0.97)',
           backdropFilter: 'blur(8px)',
           position: 'sticky',
           top: 0,
           zIndex: 50,
         }}>
-          <div style={{ maxWidth: 1600, margin: '0 auto', padding: '12px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <div style={{ width: 36, height: 36, borderRadius: 10, background: 'linear-gradient(135deg, #7c3aed, #4f46e5)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 900, fontSize: 13 }}>
-                PC
+          <div style={{ maxWidth: 1600, margin: '0 auto', padding: '10px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+              {/* Alltec logo */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: 7, background: 'linear-gradient(135deg, #0369a1 0%, #0ea5e9 100%)', borderRadius: 8, padding: '7px 12px' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="3" width="20" height="13" rx="2"/>
+                  <path d="M8 21h8M12 16v5"/>
+                </svg>
+                <span style={{ fontSize: 13, fontWeight: 900, color: 'white', letterSpacing: '0.14em' }}>ALLTEC</span>
               </div>
-              <div>
-                <h1 style={{ margin: 0, fontSize: 16, fontWeight: 700, color: '#f9fafb', lineHeight: 1 }}>PC Builder</h1>
-                <p style={{ margin: 0, fontSize: 11, color: '#6b7280' }}>Arma tu PC gamer — arrastra o haz clic en + Agregar</p>
+              <div style={{ borderLeft: '1px solid #1e3a5f', paddingLeft: 14 }}>
+                <h1 style={{ margin: 0, fontSize: 14, fontWeight: 700, color: '#e2e8f0', lineHeight: 1 }}>PC Builder</h1>
+                <p style={{ margin: 0, fontSize: 11, color: '#475569' }}>Arrastra o haz clic en + para armar tu PC</p>
               </div>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-              <span style={{ fontSize: 13, color: '#9ca3af' }}>
-                <span style={{ color: '#a78bfa', fontWeight: 700 }}>{Object.values(build).filter(Boolean).length}</span>
-                <span style={{ color: '#4b5563' }}>/8 componentes</span>
+              <span style={{ fontSize: 13, color: '#94a3b8' }}>
+                <span style={{ color: '#38bdf8', fontWeight: 700 }}>{Object.values(build).filter(Boolean).length}</span>
+                <span style={{ color: '#334155' }}>/8 componentes</span>
               </span>
               {totalPrice > 0 && (
-                <span style={{ fontSize: 15, color: '#a78bfa', fontWeight: 700 }}>${totalPrice.toLocaleString()}</span>
+                <span style={{ fontSize: 15, color: '#38bdf8', fontWeight: 700 }}>${totalPrice.toLocaleString()}</span>
               )}
             </div>
           </div>
