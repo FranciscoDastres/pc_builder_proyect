@@ -23,11 +23,11 @@ export function BuildSummary({ build, totalPrice, totalWatts, isComplete, issues
       <div className="mb-4">
         <div className="flex justify-between items-center mb-1.5">
           <span className="text-xs text-gray-500 font-medium">COMPLETITUD</span>
-          <span className="text-xs font-bold text-violet-400">{filledSlots}/{totalSlots}</span>
+          <span className="text-xs font-bold text-sky-400">{filledSlots}/{totalSlots}</span>
         </div>
         <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-violet-600 to-violet-400 rounded-full transition-all duration-500"
+            className="h-full bg-gradient-to-r from-sky-600 to-sky-400 rounded-full transition-all duration-500"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -37,7 +37,7 @@ export function BuildSummary({ build, totalPrice, totalWatts, isComplete, issues
       <div className="grid grid-cols-2 gap-3 mb-4">
         <div className="bg-gray-800/60 rounded-xl p-3 text-center">
           <p className="text-xs text-gray-500 mb-0.5">Precio Total</p>
-          <p className="text-lg font-bold text-violet-400">${totalPrice.toLocaleString()}</p>
+          <p className="text-lg font-bold text-sky-400">${totalPrice.toLocaleString()}</p>
         </div>
         <div className={`bg-gray-800/60 rounded-xl p-3 text-center ${totalWatts > 0 ? 'border border-gray-700' : ''}`}>
           <p className="text-xs text-gray-500 mb-0.5">Consumo</p>
@@ -83,7 +83,7 @@ export function BuildSummary({ build, totalPrice, totalWatts, isComplete, issues
           disabled={!isComplete || errors.length > 0}
           className={`flex-1 text-sm py-2.5 rounded-xl font-semibold transition-all ${
             isComplete && errors.length === 0
-              ? 'bg-violet-600 hover:bg-violet-500 text-white cursor-pointer'
+              ? 'bg-sky-600 hover:bg-sky-500 text-white cursor-pointer'
               : 'bg-gray-800 text-gray-600 cursor-not-allowed'
           }`}
         >
