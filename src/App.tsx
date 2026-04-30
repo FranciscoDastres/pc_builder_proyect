@@ -61,6 +61,7 @@ export default function App() {
   }
 
   const activeSlot: ComponentSlot | null = dragging ? (dragging.slot as ComponentSlot) : null
+  const filledCount = Object.values(build).filter(Boolean).length
 
   return (
     <DndContext
@@ -68,42 +69,57 @@ export default function App() {
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
     >
-      <div className="min-h-screen bg-gray-950 flex flex-col">
-        {/* Header */}
-        <header className="border-b border-[#0c2a3e] bg-gray-950/[0.97] backdrop-blur sticky top-0 z-50">
-          <div className="max-w-[1600px] mx-auto px-6 py-[10px] flex items-center justify-between">
-            <div className="flex items-center gap-3.5">
-              <div className="flex items-center gap-[7px] bg-gradient-to-br from-[#0369a1] to-sky-500 rounded-lg px-3 py-[7px]">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="3" width="20" height="13" rx="2"/>
-                  <path d="M8 21h8M12 16v5"/>
-                </svg>
-                <span className="text-[13px] font-black text-white tracking-[0.14em]">ALLTEC</span>
+      <div className="min-h-screen bg-gray-100 flex flex-col">
+
+        {/* Header blanco estilo Alltec */}
+        <header className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+          <div className="max-w-[1600px] mx-auto px-6 py-3 flex items-center justify-between">
+            <div className="flex items-center gap-5">
+              <div>
+                <div className="text-3xl font-black text-gray-900 tracking-tight leading-none">ALLTEC</div>
+                <div className="text-[9px] font-bold text-gray-400 tracking-[0.18em] uppercase mt-0.5">San Diego #971 · Santiago</div>
               </div>
-              <div className="border-l border-[#1e3a5f] pl-3.5">
-                <h1 className="m-0 text-sm font-bold text-slate-200 leading-none">PC Builder</h1>
-                <p className="m-0 text-[11px] text-slate-600">Arrastra o haz clic en + para armar tu PC</p>
+              <div className="w-px h-10 bg-gray-200" />
+              <div>
+                <div className="text-sm font-bold text-blue-600 uppercase tracking-wide">PC Builder</div>
+                <div className="text-[11px] text-gray-400">Arrastra o haz clic en + para armar tu PC</div>
               </div>
             </div>
-            <div className="flex items-center gap-4">
-              <span className="text-[13px] text-slate-400">
-                <span className="text-sky-400 font-bold">{Object.values(build).filter(Boolean).length}</span>
-                <span className="text-slate-700">/8 componentes</span>
+            <div className="flex items-center gap-5">
+              <span className="text-sm text-gray-500">
+                <span className="text-blue-600 font-bold text-base">{filledCount}</span>
+                <span className="text-gray-400">/8 componentes</span>
               </span>
               {totalPrice > 0 && (
-                <span className="text-[15px] text-sky-400 font-bold">${totalPrice.toLocaleString()}</span>
+                <div className="text-right">
+                  <div className="text-[10px] text-gray-400 uppercase tracking-wide">Total build</div>
+                  <div className="text-xl font-black text-red-600">${totalPrice.toLocaleString()}</div>
+                </div>
               )}
+            </div>
+          </div>
+
+          {/* Barra de navegación oscura estilo Alltec */}
+          <div className="bg-gray-800 border-t border-gray-700">
+            <div className="max-w-[1600px] mx-auto px-6 py-2 flex items-center gap-1 text-xs font-bold uppercase tracking-wide text-gray-300">
+              <span className="px-3 py-1 rounded hover:bg-gray-700 transition-colors cursor-default">Componentes en Stock</span>
+              <span className="text-gray-600 mx-1">|</span>
+              <span className="px-3 py-1 rounded hover:bg-gray-700 transition-colors cursor-default">Arrastra para armar</span>
+              <span className="text-gray-600 mx-1">|</span>
+              <span className="px-3 py-1 rounded hover:bg-gray-700 transition-colors cursor-default">
+                {filledCount === 8 ? '✓ Build Completa' : `${8 - filledCount} componentes restantes`}
+              </span>
             </div>
           </div>
         </header>
 
         {/* Main */}
-        <main className="flex-1 max-w-[1600px] mx-auto w-full px-4 py-5 grid grid-cols-[1fr_390px] gap-5 h-[calc(100vh-61px)] overflow-hidden">
+        <main className="flex-1 max-w-[1600px] mx-auto w-full px-4 py-5 grid grid-cols-[1fr_390px] gap-5 h-[calc(100vh-93px)] overflow-hidden">
           {/* Left: catalog */}
           <div className="flex flex-col overflow-hidden">
             <div className="mb-2.5">
-              <h2 className="m-0 text-[13px] font-bold text-gray-300">Componentes en stock</h2>
-              <p className="m-0 text-[11px] text-gray-600">Los componentes grises no son compatibles con tu selección actual</p>
+              <h2 className="m-0 text-sm font-black text-gray-800 uppercase tracking-wide">Componentes Disponibles</h2>
+              <p className="m-0 text-[11px] text-gray-500">Los componentes en gris no son compatibles con tu selección actual</p>
             </div>
             <div className="flex-1 overflow-hidden">
               <ProductCatalog
@@ -118,9 +134,9 @@ export default function App() {
           {/* Right: builder */}
           <div className="overflow-y-auto flex flex-col gap-4">
             <div>
-              <h2 className="m-0 text-[13px] font-bold text-gray-300">Tu Build</h2>
-              <p className="mt-0.5 mb-0 text-[11px] text-gray-600">
-                {!build.case ? 'Empieza seleccionando un gabinete' : 'Arrastra componentes a los slots del gabinete'}
+              <h2 className="m-0 text-sm font-black text-gray-800 uppercase tracking-wide">Tu Build</h2>
+              <p className="mt-0.5 mb-0 text-[11px] text-gray-500">
+                {!build.case ? 'Empieza seleccionando un gabinete' : 'Arrastra componentes a los slots'}
               </p>
             </div>
             <CaseSilhouette
@@ -143,7 +159,7 @@ export default function App() {
 
       <DragOverlay>
         {dragging && (
-          <div className="rotate-[2deg] scale-105 opacity-[0.92] w-[280px]">
+          <div className="rotate-[2deg] scale-105 opacity-90 w-[280px]">
             <ProductCard product={dragging} compatible={true} selected={false} />
           </div>
         )}
