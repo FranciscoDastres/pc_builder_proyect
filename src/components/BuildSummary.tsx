@@ -18,16 +18,16 @@ export function BuildSummary({ build, totalPrice, totalWatts, isComplete, issues
   const warnings = issues.filter(i => i.severity === 'warning')
 
   return (
-    <div className="rounded-2xl border border-gray-800 bg-gray-900/50 p-4">
+    <div className="rounded border border-gray-200 bg-white shadow-sm p-4">
       {/* Progress */}
       <div className="mb-4">
         <div className="flex justify-between items-center mb-1.5">
-          <span className="text-xs text-gray-500 font-medium">COMPLETITUD</span>
-          <span className="text-xs font-bold text-sky-400">{filledSlots}/{totalSlots}</span>
+          <span className="text-[10px] text-gray-500 font-black uppercase tracking-widest">Completitud</span>
+          <span className="text-xs font-black text-blue-600">{filledSlots}/{totalSlots} componentes</span>
         </div>
-        <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
+        <div className="h-2.5 bg-gray-100 rounded-full overflow-hidden border border-gray-200">
           <div
-            className="h-full bg-gradient-to-r from-sky-600 to-sky-400 rounded-full transition-all duration-500"
+            className="h-full bg-blue-600 rounded-full transition-all duration-500"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -35,13 +35,13 @@ export function BuildSummary({ build, totalPrice, totalWatts, isComplete, issues
 
       {/* Stats */}
       <div className="grid grid-cols-2 gap-3 mb-4">
-        <div className="bg-gray-800/60 rounded-xl p-3 text-center">
-          <p className="text-xs text-gray-500 mb-0.5">Precio Total</p>
-          <p className="text-lg font-bold text-sky-400">${totalPrice.toLocaleString()}</p>
+        <div className="bg-gray-50 border border-gray-200 rounded p-3 text-center">
+          <p className="text-[10px] text-gray-500 font-semibold uppercase tracking-wide mb-0.5">Precio Total</p>
+          <p className="text-xl font-black text-red-600">${totalPrice.toLocaleString()}</p>
         </div>
-        <div className={`bg-gray-800/60 rounded-xl p-3 text-center ${totalWatts > 0 ? 'border border-gray-700' : ''}`}>
-          <p className="text-xs text-gray-500 mb-0.5">Consumo</p>
-          <p className="text-lg font-bold text-cyan-400">{totalWatts}W</p>
+        <div className="bg-gray-50 border border-gray-200 rounded p-3 text-center">
+          <p className="text-[10px] text-gray-500 font-semibold uppercase tracking-wide mb-0.5">Consumo</p>
+          <p className="text-xl font-black text-blue-600">{totalWatts}W</p>
         </div>
       </div>
 
@@ -49,15 +49,15 @@ export function BuildSummary({ build, totalPrice, totalWatts, isComplete, issues
       {(errors.length > 0 || warnings.length > 0) && (
         <div className="mb-4 space-y-1.5">
           {errors.map((issue, i) => (
-            <div key={i} className="flex gap-2 text-xs bg-red-950/40 border border-red-800/50 rounded-lg px-3 py-2">
-              <span className="text-red-400 shrink-0">✗</span>
-              <span className="text-red-300">{issue.message}</span>
+            <div key={i} className="flex gap-2 text-xs bg-red-50 border border-red-200 rounded px-3 py-2">
+              <span className="text-red-500 shrink-0 font-bold">✗</span>
+              <span className="text-red-700">{issue.message}</span>
             </div>
           ))}
           {warnings.map((issue, i) => (
-            <div key={i} className="flex gap-2 text-xs bg-amber-950/40 border border-amber-800/50 rounded-lg px-3 py-2">
-              <span className="text-amber-400 shrink-0">⚠</span>
-              <span className="text-amber-300">{issue.message}</span>
+            <div key={i} className="flex gap-2 text-xs bg-amber-50 border border-amber-200 rounded px-3 py-2">
+              <span className="text-amber-500 shrink-0 font-bold">⚠</span>
+              <span className="text-amber-700">{issue.message}</span>
             </div>
           ))}
         </div>
@@ -65,9 +65,9 @@ export function BuildSummary({ build, totalPrice, totalWatts, isComplete, issues
 
       {/* Complete state */}
       {isComplete && errors.length === 0 && (
-        <div className="mb-4 bg-green-950/40 border border-green-700/50 rounded-xl px-4 py-3 text-center glow-pulse">
-          <p className="text-green-400 font-bold text-sm">Build Completa</p>
-          <p className="text-xs text-green-500">Tu PC gamer está lista</p>
+        <div className="mb-4 bg-green-50 border border-green-300 rounded px-4 py-3 text-center glow-pulse">
+          <p className="text-green-700 font-black text-sm uppercase tracking-wide">✓ Build Completa</p>
+          <p className="text-xs text-green-600 mt-0.5">Tu PC gamer está lista para comprar</p>
         </div>
       )}
 
@@ -75,16 +75,16 @@ export function BuildSummary({ build, totalPrice, totalWatts, isComplete, issues
       <div className="flex gap-2">
         <button
           onClick={onClear}
-          className="flex-1 bg-gray-800 hover:bg-gray-700 text-gray-300 text-sm py-2.5 rounded-xl transition-colors"
+          className="flex-1 bg-white hover:bg-gray-50 text-gray-600 text-sm py-2.5 rounded border border-gray-300 font-semibold transition-colors"
         >
           Limpiar Build
         </button>
         <button
           disabled={!isComplete || errors.length > 0}
-          className={`flex-1 text-sm py-2.5 rounded-xl font-semibold transition-all ${
+          className={`flex-1 text-sm py-2.5 rounded font-black uppercase tracking-wide transition-all ${
             isComplete && errors.length === 0
-              ? 'bg-sky-600 hover:bg-sky-500 text-white cursor-pointer'
-              : 'bg-gray-800 text-gray-600 cursor-not-allowed'
+              ? 'bg-blue-600 hover:bg-blue-700 text-white cursor-pointer shadow-sm'
+              : 'bg-gray-100 text-gray-400 cursor-not-allowed border border-gray-200'
           }`}
         >
           Comprar Build
