@@ -139,7 +139,7 @@ La UI no debe contener reglas complejas de compatibilidad ni conocer detalles de
 - `GET /admin/quote-requests`: admin revisa solicitudes.
 - `POST /admin/imports/run`: admin dispara o supervisa sincronizacion.
 
-Para el MVP/demo estos endpoints pueden ser simulados por servicios frontend y datos JSON.
+Para el MVP/demo solo se simulan catalogo, validacion y solicitud comercial desde servicios frontend y datos JSON. Endpoints admin/imports quedan fuera de la demo salvo que se definan explicitamente en una fase posterior.
 
 ## Integracion con Alltec
 

@@ -13,13 +13,13 @@ El flujo esperado es:
 1. El cliente elige componentes compatibles.
 2. La app muestra errores, advertencias, precio total y disponibilidad.
 3. El cliente ingresa datos minimos de contacto.
-4. La app simula o envia una solicitud comercial a Alltec, segun la etapa.
-5. Un admin/vendedor revisa la solicitud y contacta al cliente.
+4. La app simula una solicitud comercial para demo o la envia por un canal acordado en una etapa posterior.
+5. Alltec revisa el resumen fuera de la app en la demo; un panel admin queda para fase futura.
 
 ## Usuarios principales
 
 - Cliente publico que quiere armar un PC sin dominar todos los detalles tecnicos.
-- Admin/vendedor interno de Alltec, tratado como un mismo rol operativo en el MVP.
+- Admin/vendedor interno de Alltec como rol operativo futuro. En la demo no hay login ni panel interno.
 
 ## Experiencia esperada
 
@@ -28,7 +28,7 @@ El flujo esperado es:
 - Entender por que una pieza no calza con la build.
 - Ver precio total en CLP con IVA incluido.
 - Enviar una solicitud de armado con baja friccion.
-- Permitir que Alltec revise solicitudes y confirme disponibilidad real.
+- Permitir que Alltec revise el resumen de solicitud por un canal manual o mock en la demo, y por panel interno en una fase futura.
 
 ## Alcance MVP
 

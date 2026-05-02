@@ -95,6 +95,8 @@ Solicitud comercial enviada por un cliente.
 
 Usuario interno para admin/vendedor.
 
+Entidad futura. No se implementa login ni panel admin en el MVP/demo; el rol admin/vendedor es operativo y conceptual hasta que exista persistencia real.
+
 - `id`
 - `email`
 - `name`
@@ -102,7 +104,7 @@ Usuario interno para admin/vendedor.
 - `status`
 - `createdAt`
 
-En el MVP, vendedor y admin se tratan como el mismo rol operativo.
+Cuando se implemente, vendedor y admin se trataran como el mismo rol operativo inicial salvo que Alltec pida permisos mas granulares.
 
 ### ImportSource
 
@@ -221,5 +223,6 @@ Entidad futura. Aplica cuando exista importacion programada, auditoria o base pr
 - Marcar como incompleto cualquier producto sin specs criticas.
 - No usar descripcion para decidir compatibilidad automaticamente.
 - Guardar el dato original de tienda para auditoria si se transforma en una fase con persistencia.
-- Mantener snapshot de precio/stock en cada solicitud comercial real.
+- Incluir snapshot de precio/stock en cada solicitud comercial real.
+- Persistir snapshots solo en una fase futura con backend/base propia.
 - Revalidar precio/stock antes de enviar una solicitud real.

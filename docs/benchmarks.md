@@ -2,6 +2,8 @@
 
 Este documento resume referencias objetivas para orientar el armador de PC de Alltec. No se trata de copiarlas, sino de extraer patrones probados.
 
+Las referencias a checkout, compra, reserva o pago describen lo que hacen otros productos. No forman parte del MVP/demo de Alltec, cuyo cierre es una solicitud comercial mock o manual.
+
 ## Micro Center PC Builder
 
 Fuente: https://www.microcenter.com/site/content/custom-pc-builder.aspx

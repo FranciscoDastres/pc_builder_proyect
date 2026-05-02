@@ -82,9 +82,11 @@ Antes de enviar una solicitud comercial:
 - Revalidar compatibilidad.
 - Revalidar precio.
 - Revalidar stock.
-- Guardar snapshot de build, precio y stock.
+- Incluir snapshot de build, precio y stock en la solicitud.
 
 Si precio o stock cambia, la UI debe informarlo antes de confirmar el envio. En la demo, esta validacion puede simularse.
+
+Persistir snapshots historicos queda para una fase futura con backend/base propia.
 
 ## Solicitud comercial
 
