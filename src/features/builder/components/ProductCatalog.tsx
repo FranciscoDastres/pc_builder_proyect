@@ -2,7 +2,7 @@ import { useMemo, useRef, useState, type UIEvent } from 'react'
 import { ProductCard } from './ProductCard'
 import { slotLabels, slotOrder } from '../../../data/products'
 import type { Product, ComponentSlot, SelectedBuild } from '../../../types'
-import { getProductsForReview } from '../../../domain'
+import { getCatalogView, type ActiveCatalogCategory } from '../utils/catalogView'
 
 interface Props {
   products: Product[]
@@ -16,120 +16,35 @@ const categoryIcons: Record<string, string> = {
   gpu: '🎮', psu: '⚡', storage: '💾', cooler: '❄️',
 }
 
-type ActiveCategory = ComponentSlot | 'all' | 'review'
-type CatalogRow =
-  | { type: 'header'; slot: ComponentSlot; count: number; reviewCount: number }
-  | { type: 'product'; product: Product; reasons?: string[] }
-
 const HEADER_ROW_HEIGHT = 34
 const PRODUCT_ROW_HEIGHT = 178
 const OVERSCAN_ROWS = 6
 
 export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) {
   const [search, setSearch] = useState('')
-  const [activeCategory, setActiveCategory] = useState<ActiveCategory>('all')
+  const [activeCategory, setActiveCategory] = useState<ActiveCatalogCategory>('all')
   const [showOutOfStock, setShowOutOfStock] = useState(false)
   const [scrollTop, setScrollTop] = useState(0)
   const [viewportHeight, setViewportHeight] = useState(0)
   const scrollRef = useRef<HTMLDivElement | null>(null)
 
-  const searchTerm = search.trim().toLowerCase()
-  const hasSelectedProducts = Object.values(build).some(Boolean)
-  const reviews = useMemo(() => getProductsForReview(products), [products])
-  const reviewReasonsById = useMemo(() => {
-    return new Map(reviews.map(review => [review.product.id, review.reasons]))
-  }, [reviews])
-  const reviewCountBySlot = useMemo(() => {
-    return reviews.reduce<Record<string, number>>((acc, review) => {
-      acc[review.product.slot] = (acc[review.product.slot] ?? 0) + 1
-      return acc
-    }, {})
-  }, [reviews])
-
-  const grouped = useMemo(() => {
-    const next = slotOrder.reduce<Record<string, Product[]>>((acc, slot) => {
-      acc[slot] = []
-      return acc
-    }, {})
-
-    for (const product of products) {
-      next[product.slot]?.push(product)
-    }
-
-    return next
-  }, [products])
-
-  const visibleSlots = useMemo(() => (
-    activeCategory === 'all' || activeCategory === 'review'
-      ? slotOrder
-      : slotOrder.filter(s => s === activeCategory)
-  ), [activeCategory])
-
-  const filteredBySlot = useMemo(() => {
-    return visibleSlots.reduce<Record<string, Product[]>>((acc, slot) => {
-      const slotProducts = showOutOfStock
-        ? grouped[slot] ?? []
-        : (grouped[slot] ?? []).filter(product => product.inStock)
-      const reviewFilteredProducts = activeCategory === 'review'
-        ? slotProducts.filter(product => reviewReasonsById.has(product.id))
-        : slotProducts
-      const compatibleProducts = hasSelectedProducts
-        ? reviewFilteredProducts.filter(product =>
-          build[product.slot as ComponentSlot]?.id === product.id ||
-          isCompatible(product, product.slot as ComponentSlot)
-        )
-        : reviewFilteredProducts
-
-      acc[slot] = searchTerm
-        ? compatibleProducts.filter(product =>
-          product.name.toLowerCase().includes(searchTerm) ||
-          product.brand.toLowerCase().includes(searchTerm) ||
-          product.description.toLowerCase().includes(searchTerm)
-        )
-        : compatibleProducts
-      return acc
-    }, {})
-  }, [activeCategory, build, grouped, hasSelectedProducts, isCompatible, reviewReasonsById, searchTerm, showOutOfStock, visibleSlots])
-  const hiddenBySlot = useMemo(() => {
-    if (!hasSelectedProducts) return {}
-
-    return visibleSlots.reduce<Record<string, number>>((acc, slot) => {
-      const sourceProducts = activeCategory === 'review'
-        ? (grouped[slot] ?? []).filter(product => (showOutOfStock || product.inStock) && reviewReasonsById.has(product.id))
-        : (showOutOfStock ? grouped[slot] ?? [] : (grouped[slot] ?? []).filter(product => product.inStock))
-      const visibleProducts = filteredBySlot[slot] ?? []
-      acc[slot] = Math.max(0, sourceProducts.length - visibleProducts.length)
-      return acc
-    }, {})
-  }, [activeCategory, filteredBySlot, grouped, hasSelectedProducts, reviewReasonsById, showOutOfStock, visibleSlots])
-  const outOfStockBySlot = useMemo(() => {
-    return visibleSlots.reduce<Record<string, number>>((acc, slot) => {
-      acc[slot] = (grouped[slot] ?? []).filter(product => !product.inStock).length
-      return acc
-    }, {})
-  }, [grouped, visibleSlots])
-  const outOfStockCount = Object.values(outOfStockBySlot).reduce((sum, count) => sum + count, 0)
-
-  const hasVisibleProducts = visibleSlots.some(slot => filteredBySlot[slot]?.length > 0)
-  const rows = useMemo<CatalogRow[]>(() => {
-    return visibleSlots.flatMap(slot => {
-      const items = filteredBySlot[slot] ?? []
-      if (!items.length) return []
-      return [
-        {
-          type: 'header' as const,
-          slot: slot as ComponentSlot,
-          count: items.length,
-          reviewCount: reviewCountBySlot[slot] ?? 0,
-        },
-        ...items.map(product => ({
-          type: 'product' as const,
-          product,
-          reasons: reviewReasonsById.get(product.id),
-        })),
-      ]
-    })
-  }, [filteredBySlot, reviewCountBySlot, reviewReasonsById, visibleSlots])
+  const catalogView = useMemo(() => getCatalogView({
+    products,
+    build,
+    activeCategory,
+    searchTerm: search,
+    showOutOfStock,
+    isCompatible,
+  }), [activeCategory, build, isCompatible, products, search, showOutOfStock])
+  const {
+    rows,
+    outOfStockBySlot,
+    outOfStockCount,
+    hiddenBySlot,
+    hasSelectedProducts,
+    hasVisibleProducts,
+    reviewCount,
+  } = catalogView
   const rowPositions = useMemo(() => {
     const positions: number[] = []
     let totalHeight = 0
@@ -165,7 +80,7 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
   }, [rowPositions.positions, rows, scrollTop, viewportHeight])
   const visibleRows = rows.slice(visibleRange.start, visibleRange.end + 1)
 
-  function changeCategory(category: ActiveCategory) {
+  function changeCategory(category: ActiveCatalogCategory) {
     setActiveCategory(category)
     setScrollTop(0)
     scrollRef.current?.scrollTo({ top: 0 })
@@ -211,7 +126,7 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
               : 'bg-white text-gray-600 border-gray-300 hover:border-amber-400 hover:text-amber-600'
           }`}
         >
-          Revision {reviews.length}
+          Revision {reviewCount}
         </button>
         {slotOrder.map(slot => (
           <button

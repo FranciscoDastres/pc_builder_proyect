@@ -16,6 +16,7 @@ Para la demo:
 
 - `Product` vive en JSON/fixtures.
 - `Build` vive en estado frontend.
+- `BuildSummary` puede generarse en frontend y copiarse/exportarse sin persistencia.
 - `QuoteRequest` puede ser mock y no persistirse.
 
 PostgreSQL se incorpora solo en una fase futura si se necesita persistir solicitudes, snapshots, usuarios internos, logs de sincronizacion o correcciones manuales de specs.
@@ -56,6 +57,8 @@ Representa una seleccion de componentes.
 - `totalPrice`
 - `totalWatts`
 - `issues`
+- `stockStatus`
+- `updatedAt`
 - `createdAt`
 
 ### BuildItem
@@ -75,9 +78,35 @@ Representa una seleccion de componentes.
 - `message`
 - `productIds`
 
+### BuildSummary
+
+Representa el artefacto que el usuario recibe como resultado principal.
+
+- `id`
+- `buildSnapshot`
+- `totalPrice`
+- `totalWatts`
+- `stockStatus`
+- `issues`
+- `reviewRequired`
+- `source`
+- `createdAt`
+
+En el MVP puede existir solo como objeto frontend para copiar texto, mostrar resumen o preparar export. En una fase futura puede persistirse para links compartibles.
+
+### SharedBuild
+
+Entidad futura para links persistentes.
+
+- `id`
+- `publicSlug`
+- `buildSummary`
+- `expiresAt`
+- `createdAt`
+
 ### QuoteRequest
 
-Solicitud comercial enviada por un cliente.
+Solicitud comercial opcional enviada por un cliente desde una build preparada.
 
 - `id`
 - `customerName`

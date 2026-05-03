@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Construir un armador de PC para Alltec, tienda chilena especializada en hardware. El usuario debe poder armar una PC virtualmente usando productos de Alltec, validar compatibilidad, ver precio/stock estimado y enviar una solicitud comercial para que Alltec confirme la venta y el armado.
+Construir un armador de PC para Alltec, tienda chilena especializada en hardware. El usuario debe poder armar una PC virtualmente usando productos de Alltec, validar compatibilidad, ver precio/stock estimado y recibir una build clara como resultado principal. La solicitud comercial existe como accion secundaria posterior, no como el centro del MVP.
 
 ## Producto
 
@@ -11,10 +11,10 @@ La primera version sera un sitio aparte y puede funcionar con JSON/fixtures gran
 El flujo esperado es:
 
 1. El cliente elige componentes compatibles.
-2. La app muestra errores, advertencias, precio total y disponibilidad.
-3. El cliente ingresa datos minimos de contacto.
-4. La app simula una solicitud comercial para demo o la envia por un canal acordado en una etapa posterior.
-5. Alltec revisa el resumen fuera de la app en la demo; un panel admin queda para fase futura.
+2. La app muestra errores, advertencias, precio total, disponibilidad y specs relevantes.
+3. La app entrega un resumen de build listo para revisar, compartir o exportar.
+4. El cliente puede copiar la build, guardar el resumen localmente o enviarla a Alltec como solicitud comercial opcional.
+5. Alltec revisa la build fuera de la app en la demo; un panel admin queda para fase futura.
 
 ## Usuarios principales
 
@@ -27,8 +27,22 @@ El flujo esperado es:
 - Ver componentes incompatibles claramente marcados.
 - Entender por que una pieza no calza con la build.
 - Ver precio total en CLP con IVA incluido.
-- Enviar una solicitud de armado con baja friccion.
-- Permitir que Alltec revise el resumen de solicitud por un canal manual o mock en la demo, y por panel interno en una fase futura.
+- Ver un resumen de build permanente mientras se seleccionan piezas.
+- Compartir, copiar o exportar la build como resultado principal.
+- Enviar una solicitud de armado con baja friccion como accion secundaria.
+- Permitir que Alltec revise el resumen de build por un canal manual o mock en la demo, y por panel interno en una fase futura.
+
+## Modelo UI/UX objetivo
+
+En desktop, el armador debe organizarse en tres zonas persistentes:
+
+1. Catalogo: lista virtualizada de productos, buscador y filtros por slot, marca, precio, stock y compatibilidad.
+2. Build actual: slots principales del PC, componentes seleccionados, acciones de reemplazar/quitar y total estimado.
+3. Resumen/inspector: estado de compatibilidad, stock, precio total, detalle del producto enfocado y acciones para copiar, compartir, exportar o solicitar.
+
+La tercera columna es contextual. Por defecto muestra el resumen de build; si hay errores debe priorizar compatibilidad; si el usuario enfoca un producto debe mostrar detalle y razon de compatibilidad.
+
+En mobile, estas zonas deben convertirse en tabs o pasos equivalentes: Catalogo, Build y Resumen.
 
 ## Alcance MVP
 
@@ -36,7 +50,9 @@ El flujo esperado es:
 - Catalogo preparado para 1000 a 10000 productos.
 - Validacion basica y extensible de compatibilidad.
 - Integracion preparada para datos reales de Alltec.
-- Solicitud comercial mock con contacto minimo para demo.
+- Resumen de build con precio, stock, compatibilidad y specs clave.
+- Acciones mock/locales para copiar o exportar la build.
+- Solicitud comercial mock con contacto minimo para demo, tratada como accion secundaria.
 - Sin login cliente.
 - Sin base de datos propia obligatoria.
 
@@ -52,7 +68,17 @@ El flujo esperado es:
 - Scraping no autorizado como fuente oficial.
 - PostgreSQL como requisito de MVP.
 
-## Datos minimos de solicitud
+## Datos minimos de build
+
+- Componentes seleccionados.
+- Precio total estimado.
+- Estado de stock por componente.
+- Estado de compatibilidad general.
+- Errores, advertencias y revisiones requeridas.
+- Specs clave por componente.
+- Fecha/hora del snapshot si se comparte, exporta o solicita.
+
+## Datos minimos de solicitud opcional
 
 - Nombre.
 - Email o telefono.
@@ -65,7 +91,8 @@ El flujo esperado es:
 ## Metricas de exito
 
 - La app navega fluidamente un catalogo de 1000 a 10000 productos.
-- Una build incompatible se detecta antes de enviar solicitud.
+- Una build incompatible se detecta antes de compartir, exportar o solicitar.
 - Las reglas de compatibilidad tienen tests automatizados.
 - El catalogo no depende de `src/data/products.ts`.
-- Alltec puede revisar solicitudes con informacion suficiente para cerrar la venta.
+- El usuario puede entender y compartir una build sin pedir ayuda externa.
+- Alltec puede revisar builds o solicitudes con informacion suficiente para cerrar la venta.

@@ -6,8 +6,8 @@ Las reglas deben ser funciones puras: reciben una build y/o producto candidato, 
 
 ## Severidades
 
-- `error`: bloquea que la solicitud se marque como lista para confirmar.
-- `warning`: permite enviar solicitud, pero debe quedar visible para cliente y admin.
+- `error`: bloquea que la build se marque como compatible/lista para compartir sin advertencia critica.
+- `warning`: permite copiar, exportar o solicitar la build, pero debe quedar visible para cliente y admin.
 - `info`: dato util para ayudar al usuario o al vendedor.
 - `review`: faltan datos criticos y la build requiere revision interna.
 
@@ -52,7 +52,7 @@ Las reglas deben ser funciones puras: reciben una build y/o producto candidato, 
 ### Datos incompletos
 
 - `review` si falta una spec critica para validar una regla relevante.
-- El producto puede mostrarse, pero la solicitud debe indicar que requiere confirmacion de Alltec.
+- El producto puede mostrarse, pero el resumen de build debe indicar que requiere confirmacion de Alltec.
 
 ## Reglas futuras
 

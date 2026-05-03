@@ -6,7 +6,7 @@ Conectar el armador de PC con datos de Alltec sin acoplar el dominio ni la UI al
 
 ## Estrategia inicial
 
-La primera entrega vive como sitio aparte. El armador puede usar JSON/fixtures grandes para demo y solicitud mock. No modifica carrito, pedidos ni pagos del sitio Alltec.
+La primera entrega vive como sitio aparte. El armador puede usar JSON/fixtures grandes para demo, entregar resumen de build y ofrecer solicitud mock como accion secundaria. No modifica carrito, pedidos ni pagos del sitio Alltec.
 
 Si Alltec valida la demo y expone datos, la estrategia preferida es API-first sin base de datos propia.
 
@@ -14,7 +14,7 @@ Si Alltec valida la demo y expone datos, la estrategia preferida es API-first si
 
 ### Opcion ideal: API de Alltec
 
-Alltec expone productos, categorias, precios, stock, imagenes y URLs. El armador consume esa API mediante un adaptador. Puede existir backend liviano si se necesita proteger credenciales, normalizar respuestas o enviar solicitudes reales.
+Alltec expone productos, categorias, precios, stock, imagenes y URLs. El armador consume esa API mediante un adaptador. Puede existir backend liviano si se necesita proteger credenciales, normalizar respuestas, generar links persistentes o enviar solicitudes reales.
 
 En frontend, el repo ya contempla un proveedor API opcional mediante `VITE_ALLTEC_PRODUCTS_API`. Solo debe usarse si Alltec entrega un endpoint publico o con CORS habilitado y sin secretos embebidos en cliente. La prioridad runtime queda:
 
@@ -87,7 +87,7 @@ Estados sugeridos:
 
 ## Cache y sincronizacion
 
-El cache no es fuente de verdad. Sirve para velocidad, pero precio y stock deben revalidarse contra Alltec antes de enviar una solicitud real.
+El cache no es fuente de verdad. Sirve para velocidad, pero precio y stock deben revalidarse contra Alltec antes de enviar una solicitud real o antes de presentar una build como lista para confirmacion comercial.
 
 Estrategias posibles segun la API disponible:
 
@@ -99,22 +99,35 @@ Estrategias posibles segun la API disponible:
 
 Si no existe API, la sincronizacion depende de export/import programado y debe mostrarse la fecha de ultima actualizacion.
 
-## Revalidacion antes de solicitud real
+## Revalidacion antes de acciones reales
 
-Antes de enviar una solicitud comercial:
+Antes de compartir una build persistente, exportar un resumen comercial o enviar una solicitud:
 
 - Revalidar compatibilidad.
 - Revalidar precio.
 - Revalidar stock.
-- Incluir snapshot de build, precio y stock en la solicitud.
+- Incluir snapshot de build, precio y stock en el resumen o solicitud.
 
 Si precio o stock cambia, la UI debe informarlo antes de confirmar el envio. En la demo, esta validacion puede simularse.
 
 Persistir snapshots historicos queda para una fase futura con backend/base propia.
 
+## Resumen de build
+
+El resumen de build es el resultado principal del MVP. Debe incluir:
+
+- Componentes seleccionados.
+- Precio total estimado.
+- Estado de stock.
+- Errores, advertencias y revisiones requeridas.
+- Specs clave usadas para compatibilidad.
+- Fuente y fecha de actualizacion del catalogo cuando este disponible.
+
+El resumen puede copiarse o exportarse localmente en el MVP. Un link compartible persistente requiere backend o almacenamiento acordado.
+
 ## Solicitud comercial
 
-La solicitud no es una orden pagada. Es una oportunidad comercial para que Alltec confirme disponibilidad, armado y condiciones.
+La solicitud no es una orden pagada. Es una oportunidad comercial opcional para que Alltec confirme disponibilidad, armado y condiciones a partir de una build ya preparada.
 
 Datos minimos:
 

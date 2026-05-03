@@ -8,10 +8,9 @@ interface Props {
   isComplete: boolean
   issues: CompatibilityIssue[]
   onClear: () => void
-  onRequestQuote: () => void
 }
 
-export function BuildSummary({ build, totalPrice, totalWatts, isComplete, issues, onClear, onRequestQuote }: Props) {
+export function BuildSummary({ build, totalPrice, totalWatts, isComplete, issues, onClear }: Props) {
   const filledSlots = Object.values(build).filter(Boolean).length
   const totalSlots = Object.keys(build).length
   const progress = (filledSlots / totalSlots) * 100
@@ -76,7 +75,7 @@ export function BuildSummary({ build, totalPrice, totalWatts, isComplete, issues
       {isComplete && errors.length === 0 && (
         <div className="mb-4 bg-green-50 border border-green-300 rounded px-4 py-3 text-center glow-pulse">
           <p className="text-green-700 font-black text-sm uppercase tracking-wide">✓ Build Completa</p>
-          <p className="text-xs text-green-600 mt-0.5">Tu PC gamer está lista para solicitar armado</p>
+          <p className="text-xs text-green-600 mt-0.5">Tu resumen está listo para revisar o compartir</p>
         </div>
       )}
 
@@ -84,20 +83,9 @@ export function BuildSummary({ build, totalPrice, totalWatts, isComplete, issues
       <div className="flex gap-2">
         <button
           onClick={onClear}
-          className="flex-1 bg-white hover:bg-gray-50 text-gray-600 text-sm py-2.5 rounded border border-gray-300 font-semibold transition-colors"
+          className="w-full bg-white hover:bg-gray-50 text-gray-600 text-sm py-2.5 rounded border border-gray-300 font-semibold transition-colors"
         >
           Limpiar Build
-        </button>
-        <button
-          disabled={!isComplete || errors.length > 0}
-          onClick={onRequestQuote}
-          className={`flex-1 text-sm py-2.5 rounded font-black uppercase tracking-wide transition-all ${
-            isComplete && errors.length === 0
-              ? 'bg-blue-600 hover:bg-blue-700 text-white cursor-pointer shadow-sm'
-              : 'bg-gray-100 text-gray-400 cursor-not-allowed border border-gray-200'
-          }`}
-        >
-          Solicitar Armado
         </button>
       </div>
     </div>

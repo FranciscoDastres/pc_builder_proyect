@@ -9,7 +9,7 @@ Objetivo: dejar una base clara para seguir trabajando sin romper funcionalidad.
 - [x] Crear un servicio de catalogo mock en vez de importar `allProducts` directo en la pagina.
 - [x] Definir filtros minimos por categoria.
 - [x] Agregar estados de carga, vacio y error.
-- [x] Cambiar el cierre conceptual desde "comprar build" hacia "solicitar armado".
+- [x] Cambiar el cierre conceptual desde "comprar build" hacia "build validada como resultado".
 
 Resultado esperado: la app sigue funcionando igual, pero el dominio queda testeable y desacoplado.
 
@@ -22,21 +22,38 @@ Objetivo: soportar 1000 a 10000 productos sin degradar la UI y preparar datos ce
 - [x] Virtualizar el listado de productos.
 - [x] Memoizar agrupacion, busqueda y filtros.
 - [x] Evitar calcular compatibilidad para productos fuera de pantalla.
-- [ ] Medir rendimiento con catalogo mock grande.
+- [x] Medir rendimiento con catalogo mock grande.
+- [x] Cubrir filtros de stock, compatibilidad, busqueda y revision con tests de utilidad pura.
 
 Resultado esperado: busqueda y navegacion fluidas con miles de productos.
 
-## Fase 2: Solicitud comercial mock
+## Fase 2: Build como resultado principal
 
-Objetivo: demostrar el cierre del flujo sin base de datos ni integracion real.
+Objetivo: entregar una build clara, validada y facil de revisar sin base de datos ni integracion real.
+
+- [x] Validar build antes de simular envio.
+- [x] Mostrar resumen de productos, precio y stock.
+- [x] Mostrar errores y advertencias de compatibilidad.
+- [x] Redisenar la pantalla principal hacia layout desktop de tres columnas: catalogo, build y resumen/inspector.
+- [x] Agregar accion para copiar resumen de build como texto.
+- [x] Agregar guardado local de build.
+- [x] Agregar export TXT del resumen.
+- [x] Preparar vista imprimible para guardar como PDF desde navegador.
+- [x] Agregar link compartible local por URL con IDs de productos.
+
+Resultado esperado: el usuario puede terminar con una build entendible y util aunque no envie una solicitud.
+
+## Fase 2.5: Solicitud comercial mock secundaria
+
+Objetivo: permitir que una build ya preparada se envie a Alltec como siguiente paso opcional.
 
 - [x] Crear formulario de contacto minimo.
-- [x] Validar build antes de simular envio.
 - [x] Preparar payload de solicitud con snapshot de productos, precio y stock.
 - [x] Mostrar confirmacion al cliente.
 - [x] Mantener la solicitud como mock sin persistencia.
+- [x] Mover la solicitud visualmente al resumen/inspector como accion secundaria.
 
-Resultado esperado: Alltec puede ver el flujo completo de armado y solicitud sin infraestructura adicional.
+Resultado esperado: Alltec puede ver el flujo completo de armado y solicitud sin convertir la solicitud en el centro del producto.
 
 ## Fase 3: Integracion API Alltec sin base propia
 
@@ -87,7 +104,8 @@ Objetivo: extender el producto si Alltec valida el MVP.
 - [ ] Integracion con pago online.
 - [ ] Embebido dentro del sitio Alltec.
 - [ ] Recomendaciones automaticas por presupuesto/uso.
-- [ ] Compartir builds por URL.
+- [x] Compartir builds por URL local sin backend.
+- [ ] Compartir builds por URL persistente con backend.
 - [ ] Comparar alternativas compatibles.
 
 Resultado esperado: el armador se convierte en parte del flujo comercial completo.
