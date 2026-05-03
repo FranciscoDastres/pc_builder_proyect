@@ -19,7 +19,8 @@ La app funciona completamente en frontend. La compatibilidad y el catalogo viven
 
 - Frontend: TypeScript con React y Vite.
 - Datos: JSON/fixtures grandes con productos mock o semi-reales.
-- Solicitud comercial: simulada.
+- Resultado principal: resumen de build local con precio, stock, compatibilidad y specs clave.
+- Solicitud comercial: simulada y secundaria.
 - Virtualizacion: TanStack Virtual o alternativa equivalente para catalogos grandes.
 - Tests de dominio: Vitest.
 - E2E: Playwright.
@@ -47,9 +48,10 @@ Avanzar en capas:
 2. Acceso a datos.
 3. Estado de la build.
 4. UI.
-5. Solicitudes comerciales.
-6. Administracion.
-7. Integraciones externas.
+5. Resumen, exportacion y acciones de build.
+6. Solicitudes comerciales.
+7. Administracion.
+8. Integraciones externas.
 
 ## Capas propuestas
 
@@ -108,6 +110,8 @@ Responsabilidades:
 - Build seleccionada.
 - Acciones: agregar, remover, limpiar, reemplazar.
 - Persistencia local opcional.
+- Preparar resumen de build.
+- Preparar payload de exportacion o copia.
 - Preparar payload de solicitud.
 
 Para el estado inicial basta con React state o reducer. Si crece, evaluar Zustand.
@@ -126,15 +130,20 @@ Responsabilidades:
 - Tarjetas de producto.
 - Builder visual.
 - Resumen.
-- Solicitud comercial.
+- Inspector contextual de compatibilidad y detalle de producto.
+- Acciones de build: copiar, exportar, compartir futuro y solicitar.
+- Solicitud comercial secundaria.
 
 La UI no debe contener reglas complejas de compatibilidad ni conocer detalles de la fuente de datos.
+
+En desktop, la UI objetivo usa tres columnas persistentes: catalogo, build actual y resumen/inspector. En mobile, esas zonas se presentan como tabs o pasos equivalentes. La especificacion de interaccion vive en [UI/UX objetivo](./ui-ux.md).
 
 ## Contrato funcional objetivo futuro
 
 - `GET /products`: catalogo paginado con filtros.
 - `GET /products/:id`: detalle normalizado.
 - `POST /builds/validate`: valida compatibilidad de una build.
+- `POST /builds/summary`: genera o normaliza un resumen compartible/exportable.
 - `POST /quote-requests`: envia solicitud comercial con contacto minimo.
 - `GET /admin/quote-requests`: admin revisa solicitudes.
 - `POST /admin/imports/run`: admin dispara o supervisa sincronizacion.

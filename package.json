@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
+    "benchmark:catalog": "node scripts/benchmark-catalog.mjs",
     "scrape:alltec": "node scripts/scrape-alltec-products.mjs",
     "scrape:alltec:demo": "ALLTEC_STRICT_SPECS=0 ALLTEC_PER_SLOT_LIMIT=12 ALLTEC_LIMIT=414 node scripts/scrape-alltec-products.mjs",
     "validate:alltec-fixture": "node scripts/validate-alltec-fixture.mjs"

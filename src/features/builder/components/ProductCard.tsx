@@ -17,6 +17,7 @@ export function ProductCard({ product, compatible, selected, onAdd, draggable = 
   const blocked = !compatible || unavailable
   const blockLabel = unavailable ? 'Sin stock' : 'No compatible'
   const blockTitle = unavailable ? 'Producto sin stock disponible' : 'No compatible con tu build actual'
+  const reviewLabel = reviewReasons.slice(0, 2).join(' · ')
   const { attributes, listeners, setNodeRef, isDragging } = useDraggable({
     id: draggable ? product.id : `preview-${product.id}`,
     data: { product },
@@ -24,7 +25,7 @@ export function ProductCard({ product, compatible, selected, onAdd, draggable = 
   })
 
   const baseClass = `
-    relative rounded border bg-white transition-all duration-200
+    relative h-[170px] rounded border bg-white transition-all duration-200 flex flex-col overflow-hidden
     ${isDragging ? 'opacity-40 scale-95' : ''}
     ${selected ? 'border-blue-500 bg-blue-50 cursor-default' : ''}
     ${!selected && !blocked && draggable ? 'border-gray-200 hover:border-blue-400 hover:shadow-md cursor-grab active:cursor-grabbing shadow-sm' : ''}
@@ -58,7 +59,7 @@ export function ProductCard({ product, compatible, selected, onAdd, draggable = 
         </span>
       )}
 
-      <div className={`p-3 flex items-start gap-3 ${isCase ? 'items-center' : ''}`}>
+      <div className={`min-h-0 flex-1 p-3 flex items-start gap-3 ${isCase ? 'items-center' : ''}`}>
         <div className="shrink-0 flex items-center justify-center">
           {showProductImage
             ? (
@@ -74,26 +75,29 @@ export function ProductCard({ product, compatible, selected, onAdd, draggable = 
             : <span className="text-2xl">{product.image}</span>
           }
         </div>
-        <div className="flex-1 min-w-0">
+        <div className="flex-1 min-w-0 overflow-hidden">
           <p className="text-[10px] text-gray-400 uppercase tracking-wider font-semibold">{product.brand}</p>
           <p className="text-sm font-bold text-gray-800 leading-tight line-clamp-2">{product.name}</p>
           <p className="text-xs text-gray-500 mt-0.5 line-clamp-1">{product.description}</p>
           <ProductSpecs product={product} />
           {reviewReasons.length > 0 && (
-            <div className="mt-1.5 rounded border border-amber-200 bg-amber-50 px-2 py-1">
-              <p className="text-[10px] font-bold uppercase tracking-wide text-amber-700">
+            <div
+              className="mt-1.5 flex min-w-0 items-center gap-1.5 rounded border border-amber-200 bg-amber-50 px-1.5 py-0.5 text-[10px] text-amber-700"
+              title={reviewReasons.join(' · ')}
+            >
+              <span className="shrink-0 font-bold uppercase tracking-wide">
                 Revisar specs
-              </p>
-              <p className="text-[10px] text-amber-700 line-clamp-1">
-                {reviewReasons.slice(0, 2).join(' · ')}
-              </p>
+              </span>
+              <span className="min-w-0 truncate">
+                {reviewLabel}
+              </span>
             </div>
           )}
         </div>
       </div>
 
-      <div className="flex items-center justify-between px-3 pb-3 pt-1 border-t border-gray-100">
-        <span className="text-red-600 font-black text-base">{formatCLP(product.price)}</span>
+      <div className="shrink-0 flex items-center justify-between gap-2 px-3 pb-3 pt-2 border-t border-gray-100">
+        <span className="min-w-0 truncate text-red-600 font-black text-base">{formatCLP(product.price)}</span>
         {!blocked && !selected && onAdd && (
           <button
             onPointerDown={(e) => e.stopPropagation()}

@@ -2,7 +2,7 @@
 
 Este documento resume referencias objetivas para orientar el armador de PC de Alltec. No se trata de copiarlas, sino de extraer patrones probados.
 
-Las referencias a checkout, compra, reserva o pago describen lo que hacen otros productos. No forman parte del MVP/demo de Alltec, cuyo cierre es una solicitud comercial mock o manual.
+Las referencias a checkout, compra, reserva o pago describen lo que hacen otros productos. No forman parte del MVP/demo de Alltec. El cierre principal del MVP es una build clara, validada y compartible/exportable; la solicitud comercial queda como accion secundaria.
 
 ## Micro Center PC Builder
 
@@ -17,7 +17,7 @@ Fuente: https://www.microcenter.com/site/content/custom-pc-builder.aspx
 
 ### Aprendizaje para Alltec
 
-Micro Center es la referencia principal porque combina catalogo real, compatibilidad y flujo comercial. Para Alltec, la primera version debe reemplazar el checkout por una solicitud comercial de baja friccion.
+Micro Center es la referencia principal porque combina catalogo real, compatibilidad y build compartible. Para Alltec, la primera version debe reemplazar el checkout por un resumen de build util y una solicitud comercial opcional.
 
 ## LDLC PC Builder
 
@@ -32,7 +32,7 @@ Fuente: https://www.ldlc.com/en/pc-builder/
 
 ### Aprendizaje para Alltec
 
-LDLC valida que el modelo de "configurador de tienda" funciona cuando el catalogo y las reglas guian al usuario. En Alltec conviene partir con componentes principales y dejar perifericos para fase futura.
+LDLC valida que el modelo de "configurador de tienda" funciona cuando el catalogo y las reglas guian al usuario. En Alltec conviene partir con componentes principales, mantener la build visible y dejar perifericos para fase futura.
 
 ## PCPartPicker
 
@@ -46,7 +46,7 @@ Fuente: https://www.linkedin.com/company/pcpartpicker-llc
 
 ### Aprendizaje para Alltec
 
-PCPartPicker es el benchmark de compatibilidad y claridad tecnica. Alltec no necesita ser comparador multi-tienda en el MVP, pero si debe aprender de sus warnings, filtros y builds compartibles.
+PCPartPicker es el benchmark de compatibilidad, claridad tecnica y build como artefacto compartible. Alltec no necesita ser comparador multi-tienda en el MVP, pero si debe aprender de sus warnings, filtros y resumen permanente.
 
 ## NZXT Custom PCs
 
@@ -77,4 +77,14 @@ Fuente: https://www.alltec.cl/
 
 ### Implicancia
 
-El armador debe partir como sitio aparte y usar la solicitud comercial como puente. La integracion directa con carrito o pago queda para una fase posterior, cuando haya acceso tecnico y aprobacion de Alltec.
+El armador debe partir como sitio aparte y entregar una build revisable como valor principal. La solicitud comercial puede actuar como puente hacia Alltec, pero la integracion directa con carrito o pago queda para una fase posterior, cuando haya acceso tecnico y aprobacion.
+
+## Patron UI recomendado
+
+Los benchmarks apuntan a una experiencia de herramienta: catalogo filtrable, build siempre visible y resumen tecnico accionable. Para Alltec, el layout objetivo en desktop es de tres columnas:
+
+1. Catalogo de productos compatibles.
+2. Build actual por slots.
+3. Resumen/inspector con total, compatibilidad, stock, detalle contextual y acciones.
+
+En mobile, estas columnas se transforman en tabs: Catalogo, Build y Resumen.

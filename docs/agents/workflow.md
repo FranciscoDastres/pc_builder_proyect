@@ -44,6 +44,8 @@ Reglas:
 - Cambios pequenos y enfocados.
 - Mantener separacion dominio/datos/UI.
 - No introducir checkout/pago/carrito propio en MVP.
+- Mantener la build/resumen como resultado principal del MVP.
+- Tratar la solicitud comercial como accion secundaria salvo decision documentada.
 - No acoplar directamente a Alltec.
 - Agregar tests para reglas de compatibilidad o transformaciones de datos.
 

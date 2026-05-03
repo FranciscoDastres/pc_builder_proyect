@@ -1,6 +1,6 @@
 # PC Builder Alltec Demo
 
-Aplicación frontend para armar una PC virtual usando productos de Alltec o datos mock. El objetivo actual es demostrar el flujo MVP: catálogo de componentes, compatibilidad, armado visual y solicitud comercial mock, sin checkout, pago ni backend propio.
+Aplicación frontend para armar una PC virtual usando productos de Alltec o datos mock. El objetivo actual es demostrar el flujo MVP: catálogo de componentes, compatibilidad, armado visual y resumen de build como resultado principal, sin checkout, pago ni backend propio. La solicitud comercial mock queda como acción secundaria.
 
 ## Estado Actual
 
@@ -9,7 +9,8 @@ Aplicación frontend para armar una PC virtual usando productos de Alltec o dato
 - Fixture demo Alltec con productos reales y specs estimadas marcadas como revisión.
 - Compatibilidad en funciones de dominio testeadas.
 - Catálogo virtualizado y filtrado por stock/compatibilidad.
-- Solicitud comercial mock con datos de contacto y snapshot de build.
+- Resumen de build con precio, stock e issues de compatibilidad.
+- Solicitud comercial mock secundaria con datos de contacto y snapshot de build.
 - Sin persistencia, sin pagos y sin carrito propio.
 
 ## Requisitos
@@ -42,6 +43,7 @@ npm run dev
 npm run build
 npm run lint
 npm run test
+npm run benchmark:catalog
 ```
 
 Catálogo Alltec:
@@ -62,9 +64,9 @@ npm run validate:alltec-fixture -- public/data/alltec-products.json
 2. La app filtra productos sin stock por defecto.
 3. Después de elegir un producto, el catálogo muestra solo alternativas compatibles.
 4. Completar la build.
-5. Presionar `Solicitar Armado`.
-6. Ingresar nombre, email o teléfono y comuna.
-7. Enviar solicitud mock.
+5. Revisar resumen de build, total, stock y compatibilidad.
+6. Copiar el resumen, exportarlo como TXT, abrir vista imprimible, guardar la build localmente o copiar un link compartible.
+7. Opcionalmente presionar `Solicitar Armado`, ingresar nombre, email o teléfono y comuna, y enviar solicitud mock.
 
 La solicitud genera un payload local con:
 
@@ -104,6 +106,7 @@ La API debe ser pública o estar disponible con CORS sin secretos embebidos en e
 ## Documentación
 
 - [Documentación principal](docs/README.md)
+- [UI/UX objetivo](docs/ui-ux.md)
 - [Roadmap](docs/roadmap.md)
 - [Arquitectura](docs/architecture.md)
 - [Integración Alltec](docs/alltec-integration.md)
@@ -116,7 +119,7 @@ La API debe ser pública o estar disponible con CORS sin secretos embebidos en e
 ```text
 src/domain/                 Reglas puras de compatibilidad y solicitud
 src/services/catalog/        Proveedores, adaptador Alltec y cache
-src/services/quote/          Envío mock de solicitud
+src/services/quote/          Envío mock de solicitud secundaria
 src/features/builder/        Componentes y hooks del armador
 public/data/                 Fixtures Alltec generados
 scripts/                     Scraper y validadores
@@ -125,4 +128,4 @@ docs/                        Decisiones de producto, arquitectura y roadmap
 
 ## Próximo Hito
 
-El siguiente paso recomendado es probar el adaptador con un export/API real de Alltec. Si Alltec no ofrece API pública con CORS, el siguiente bloque debería ser un backend liviano para proteger credenciales, revalidar precio/stock y enviar solicitudes reales.
+El siguiente paso recomendado es rediseñar la pantalla principal hacia tres zonas: catálogo, build actual y resumen/inspector. Después conviene probar el adaptador con un export/API real de Alltec; si Alltec no ofrece API pública con CORS, el siguiente bloque debería ser un backend liviano para proteger credenciales, revalidar precio/stock y enviar solicitudes reales.
