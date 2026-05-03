@@ -1,5 +1,6 @@
 import { useDraggable } from '@dnd-kit/core'
 import type { Product } from '../../../types'
+import { formatCLP } from '../../../utils/format'
 import { CaseIllustration } from './CaseIllustration'
 
 interface Props {
@@ -7,32 +8,40 @@ interface Props {
   compatible: boolean
   selected: boolean
   onAdd?: () => void
+  draggable?: boolean
+  reviewReasons?: string[]
 }
 
-export function ProductCard({ product, compatible, selected, onAdd }: Props) {
+export function ProductCard({ product, compatible, selected, onAdd, draggable = true, reviewReasons = [] }: Props) {
+  const unavailable = !product.inStock
+  const blocked = !compatible || unavailable
+  const blockLabel = unavailable ? 'Sin stock' : 'No compatible'
+  const blockTitle = unavailable ? 'Producto sin stock disponible' : 'No compatible con tu build actual'
   const { attributes, listeners, setNodeRef, isDragging } = useDraggable({
-    id: product.id,
+    id: draggable ? product.id : `preview-${product.id}`,
     data: { product },
-    disabled: !compatible || selected,
+    disabled: !draggable || blocked || selected,
   })
 
   const baseClass = `
     relative rounded border bg-white transition-all duration-200
     ${isDragging ? 'opacity-40 scale-95' : ''}
     ${selected ? 'border-blue-500 bg-blue-50 cursor-default' : ''}
-    ${!selected && compatible ? 'border-gray-200 hover:border-blue-400 hover:shadow-md cursor-grab active:cursor-grabbing shadow-sm' : ''}
-    ${!selected && !compatible ? 'border-gray-100 bg-gray-50 opacity-50 cursor-not-allowed' : ''}
+    ${!selected && !blocked && draggable ? 'border-gray-200 hover:border-blue-400 hover:shadow-md cursor-grab active:cursor-grabbing shadow-sm' : ''}
+    ${!selected && !blocked && !draggable ? 'border-gray-200 shadow-sm' : ''}
+    ${!selected && blocked ? 'border-gray-100 bg-gray-50 opacity-50 cursor-not-allowed' : ''}
   `
 
   const isCase = product.slot === 'case'
+  const showProductImage = Boolean(product.imageUrl)
 
   return (
     <div
       ref={setNodeRef}
-      {...listeners}
-      {...attributes}
+      {...(draggable ? listeners : {})}
+      {...(draggable ? attributes : {})}
       className={baseClass}
-      title={!compatible ? 'No compatible con tu build actual' : undefined}
+      title={blocked ? blockTitle : undefined}
     >
       {selected && (
         <div className="absolute top-0 right-0 overflow-hidden w-16 h-16 pointer-events-none">
@@ -41,28 +50,51 @@ export function ProductCard({ product, compatible, selected, onAdd }: Props) {
           </span>
         </div>
       )}
-      {!compatible && !selected && (
-        <span className="absolute top-2 right-2 text-xs text-red-400">✗</span>
+      {blocked && !selected && (
+        <span className={`absolute top-2 right-2 rounded px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide ${
+          unavailable ? 'bg-gray-200 text-gray-500' : 'bg-red-50 text-red-500'
+        }`}>
+          {blockLabel}
+        </span>
       )}
 
       <div className={`p-3 flex items-start gap-3 ${isCase ? 'items-center' : ''}`}>
         <div className="shrink-0 flex items-center justify-center">
-          {isCase
+          {showProductImage
+            ? (
+              <img
+                src={product.imageUrl}
+                alt=""
+                loading="lazy"
+                className="h-14 w-14 rounded border border-gray-100 bg-white object-contain p-1"
+              />
+            )
+            : isCase
             ? <CaseIllustration caseId={product.id} size="sm" />
             : <span className="text-2xl">{product.image}</span>
           }
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-[10px] text-gray-400 uppercase tracking-wider font-semibold">{product.brand}</p>
-          <p className="text-sm font-bold text-gray-800 leading-tight">{product.name}</p>
+          <p className="text-sm font-bold text-gray-800 leading-tight line-clamp-2">{product.name}</p>
           <p className="text-xs text-gray-500 mt-0.5 line-clamp-1">{product.description}</p>
           <ProductSpecs product={product} />
+          {reviewReasons.length > 0 && (
+            <div className="mt-1.5 rounded border border-amber-200 bg-amber-50 px-2 py-1">
+              <p className="text-[10px] font-bold uppercase tracking-wide text-amber-700">
+                Revisar specs
+              </p>
+              <p className="text-[10px] text-amber-700 line-clamp-1">
+                {reviewReasons.slice(0, 2).join(' · ')}
+              </p>
+            </div>
+          )}
         </div>
       </div>
 
       <div className="flex items-center justify-between px-3 pb-3 pt-1 border-t border-gray-100">
-        <span className="text-red-600 font-black text-base">${product.price.toLocaleString()}</span>
-        {compatible && !selected && onAdd && (
+        <span className="text-red-600 font-black text-base">{formatCLP(product.price)}</span>
+        {!blocked && !selected && onAdd && (
           <button
             onPointerDown={(e) => e.stopPropagation()}
             onClick={(e) => { e.stopPropagation(); onAdd() }}

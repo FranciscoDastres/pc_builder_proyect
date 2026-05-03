@@ -2,6 +2,7 @@ import { useCallback } from 'react'
 import { useDroppable, useDraggable } from '@dnd-kit/core'
 import type { SelectedBuild, ComponentSlot, Product } from '../../../types'
 import { slotLabels, slotOrder } from '../../../data/products'
+import { formatCLP } from '../../../utils/format'
 import { CaseIllustration } from './CaseIllustration'
 
 interface SlotProps {
@@ -59,7 +60,7 @@ function CaseSlot({ slot, product, active, hasIssue, onRemove }: SlotProps) {
       </div>
       {product && (
         <div className="flex items-center gap-2 shrink-0">
-          <span className="text-xs text-red-600 font-black">${product.price.toLocaleString()}</span>
+          <span className="text-xs text-red-600 font-black">{formatCLP(product.price)}</span>
           <button
             onPointerDown={(e) => e.stopPropagation()}
             onClick={onRemove}

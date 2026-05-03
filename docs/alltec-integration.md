@@ -16,9 +16,33 @@ Si Alltec valida la demo y expone datos, la estrategia preferida es API-first si
 
 Alltec expone productos, categorias, precios, stock, imagenes y URLs. El armador consume esa API mediante un adaptador. Puede existir backend liviano si se necesita proteger credenciales, normalizar respuestas o enviar solicitudes reales.
 
+En frontend, el repo ya contempla un proveedor API opcional mediante `VITE_ALLTEC_PRODUCTS_API`. Solo debe usarse si Alltec entrega un endpoint publico o con CORS habilitado y sin secretos embebidos en cliente. La prioridad runtime queda:
+
+1. API Alltec si `VITE_ALLTEC_PRODUCTS_API` existe.
+2. Fixture Alltec local en `/data/alltec-products.json`.
+3. Mock local del repo.
+
+El contrato esperado para API/export es un arreglo de productos con identidad, precio, stock, categoria, imagen, URL y `specs` estructuradas. El adaptador normaliza ese formato a `Product[]` y marca productos incompletos con `review_required`.
+
 ### Fallback: import/export
 
 Si no existe API, Alltec entrega export periodico o acceso a una fuente de lectura. En demo puede transformarse a JSON. En una fase posterior, un backend puede importar, validar y normalizar productos.
+
+### Fixture publico de demo
+
+El repo incluye un scraper manual para generar un fixture local desde paginas publicas de Alltec:
+
+- Comando: `npm run scrape:alltec`.
+- Fixture demo balanceado con specs estimadas: `npm run scrape:alltec:demo`.
+- Muestra controlada: `ALLTEC_OUTPUT_BASENAME=alltec-products.strict-sample ALLTEC_PER_SLOT_LIMIT=2 ALLTEC_LIMIT=414 npm run scrape:alltec`.
+- Validacion: `npm run validate:alltec-fixture -- public/data/alltec-products.json`.
+- Salida principal: `public/data/alltec-products.json`.
+- Trazabilidad: `public/data/alltec-products.meta.json`.
+- Uso runtime: el servicio de catalogo intenta cargar `/data/alltec-products.json` y cae al mock local si no esta disponible.
+
+El scraper corre en modo estricto por defecto: si una spec critica queda inferida, el producto se rechaza y queda trazado en metadata. Para demo se puede desactivar con `ALLTEC_STRICT_SPECS=0`; en ese caso las specs estimadas quedan marcadas con `dataQuality: incomplete`, `reviewSeverity` y `reviewReasons`.
+
+Resultado observado: el HTML publico no expone suficientes specs explicitas para completar todas las categorias del armador sin inferencias. El fixture demo es util para validar importacion, UI y flujo de armado, pero no debe presentarse como compatibilidad real ni reemplaza una API/export autorizado.
 
 ### Fallback avanzado: lectura controlada de BD
 

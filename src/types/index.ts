@@ -1,6 +1,6 @@
-export type CPUSocket = 'AM5' | 'LGA1700' | 'LGA1851'
+export type CPUSocket = 'AM4' | 'AM5' | 'LGA1200' | 'LGA1700' | 'LGA1851' | 'STR5'
 export type FormFactor = 'ATX' | 'mATX' | 'ITX'
-export type RAMType = 'DDR4' | 'DDR5'
+export type RAMType = 'DDR3' | 'DDR4' | 'DDR5'
 export type RAMSlots = 2 | 4
 export type PCIeGen = 'PCIe 4.0' | 'PCIe 5.0'
 export type CoolerType = 'air' | 'aio'
@@ -19,10 +19,20 @@ export type ComponentSlot =
 
 export interface BaseProduct {
   id: string
+  externalId?: string
+  sku?: string
+  dataQuality?: 'ready' | 'incomplete' | 'review_required' | 'disabled'
+  reviewReasons?: string[]
+  reviewSeverity?: 'critical' | 'warning'
+  reviewFields?: string[]
   name: string
   brand: string
   price: number
   image: string
+  imageUrl?: string
+  sourceUrl?: string
+  categoryName?: string
+  stock?: number
   slot: ComponentSlot
   inStock: boolean
   description: string
@@ -128,5 +138,65 @@ export interface SelectedBuild {
 export interface CompatibilityIssue {
   slot: ComponentSlot
   message: string
-  severity: 'error' | 'warning'
+  severity: 'error' | 'warning' | 'info' | 'review'
+}
+
+export interface QuoteContact {
+  name: string
+  emailOrPhone: string
+  comuna: string
+  comment?: string
+}
+
+export interface QuoteRequestProductSnapshot {
+  id: string
+  externalId?: string
+  sku?: string
+  slot: ComponentSlot
+  name: string
+  brand: string
+  price: number
+  stock?: number
+  inStock: boolean
+  sourceUrl?: string
+  dataQuality?: BaseProduct['dataQuality']
+  reviewReasons?: string[]
+}
+
+export interface QuoteRevalidationResultItem {
+  id: string
+  externalId?: string
+  sku?: string
+  available: boolean
+  currentPrice?: number
+  currentStock?: number
+  priceChanged: boolean
+  stockChanged: boolean
+  reason?: string
+}
+
+export interface QuoteRevalidationResult {
+  ok: boolean
+  checkedAt: string
+  items: QuoteRevalidationResultItem[]
+}
+
+export interface QuoteRequestPayload {
+  id: string
+  createdAt: string
+  status: 'mock_submitted'
+  mock: true
+  contact: QuoteContact
+  build: Partial<Record<ComponentSlot, QuoteRequestProductSnapshot>>
+  products: QuoteRequestProductSnapshot[]
+  totals: {
+    price: number
+    watts: number
+  }
+  validation: {
+    isComplete: boolean
+    issues: CompatibilityIssue[]
+    revalidation?: QuoteRevalidationResult
+  }
+  catalogSource: 'alltec-api' | 'alltec-fixture' | 'local-mock' | null
 }

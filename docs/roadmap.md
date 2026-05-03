@@ -4,12 +4,12 @@
 
 Objetivo: dejar una base clara para seguir trabajando sin romper funcionalidad.
 
-- [ ] Separar reglas de compatibilidad desde hooks React a funciones puras.
-- [ ] Agregar tests unitarios para compatibilidad.
-- [ ] Crear un servicio de catalogo mock en vez de importar `allProducts` directo en la pagina.
-- [ ] Definir filtros minimos por categoria.
-- [ ] Agregar estados de carga, vacio y error.
-- [ ] Cambiar el cierre conceptual desde "comprar build" hacia "solicitar armado".
+- [x] Separar reglas de compatibilidad desde hooks React a funciones puras.
+- [x] Agregar tests unitarios para compatibilidad.
+- [x] Crear un servicio de catalogo mock en vez de importar `allProducts` directo en la pagina.
+- [x] Definir filtros minimos por categoria.
+- [x] Agregar estados de carga, vacio y error.
+- [x] Cambiar el cierre conceptual desde "comprar build" hacia "solicitar armado".
 
 Resultado esperado: la app sigue funcionando igual, pero el dominio queda testeable y desacoplado.
 
@@ -17,11 +17,11 @@ Resultado esperado: la app sigue funcionando igual, pero el dominio queda testea
 
 Objetivo: soportar 1000 a 10000 productos sin degradar la UI y preparar datos cercanos al caso Alltec.
 
-- [ ] Crear fixture/mock grande con categorias equivalentes a Alltec.
+- [x] Crear fixture/mock inicial con categorias equivalentes a Alltec.
 - [ ] Agregar paginacion o infinite scroll.
-- [ ] Virtualizar el listado de productos.
-- [ ] Memoizar agrupacion, busqueda y filtros.
-- [ ] Evitar calcular compatibilidad para productos fuera de pantalla.
+- [x] Virtualizar el listado de productos.
+- [x] Memoizar agrupacion, busqueda y filtros.
+- [x] Evitar calcular compatibilidad para productos fuera de pantalla.
 - [ ] Medir rendimiento con catalogo mock grande.
 
 Resultado esperado: busqueda y navegacion fluidas con miles de productos.
@@ -30,11 +30,11 @@ Resultado esperado: busqueda y navegacion fluidas con miles de productos.
 
 Objetivo: demostrar el cierre del flujo sin base de datos ni integracion real.
 
-- [ ] Crear formulario de contacto minimo.
-- [ ] Validar build antes de simular envio.
-- [ ] Preparar payload de solicitud con snapshot de productos, precio y stock.
-- [ ] Mostrar confirmacion al cliente.
-- [ ] Mantener la solicitud como mock sin persistencia.
+- [x] Crear formulario de contacto minimo.
+- [x] Validar build antes de simular envio.
+- [x] Preparar payload de solicitud con snapshot de productos, precio y stock.
+- [x] Mostrar confirmacion al cliente.
+- [x] Mantener la solicitud como mock sin persistencia.
 
 Resultado esperado: Alltec puede ver el flujo completo de armado y solicitud sin infraestructura adicional.
 
@@ -42,11 +42,11 @@ Resultado esperado: Alltec puede ver el flujo completo de armado y solicitud sin
 
 Objetivo: consumir datos reales o semi-reales de Alltec mediante adaptador, sin crear una base de datos propia.
 
-- [ ] Definir adaptador de productos Alltec.
-- [ ] Mapear categorias Alltec a slots del armador.
-- [ ] Normalizar precio, stock, imagen, URL y specs.
-- [ ] Cachear catalogo solo como optimizacion no autoritativa.
-- [ ] Revalidar precio/stock antes de enviar solicitud.
+- [x] Definir adaptador de productos Alltec.
+- [x] Mapear categorias Alltec a slots del armador.
+- [x] Normalizar precio, stock, imagen, URL y specs.
+- [x] Cachear catalogo solo como optimizacion no autoritativa.
+- [x] Revalidar precio/stock antes de enviar solicitud.
 
 Resultado esperado: el catalogo del armador refleja datos de Alltec sin acoplar la UI ni requerir PostgreSQL.
 
