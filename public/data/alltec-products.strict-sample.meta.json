@@ -1,0 +1,1634 @@
+{
+  "source": "https://www.alltec.cl/1_index_sitemap.xml",
+  "startedAt": "2026-05-03T01:08:59.901Z",
+  "finishedAt": "2026-05-03T01:12:18.544Z",
+  "requestedUrls": 414,
+  "maxProducts": 414,
+  "perSlotLimit": 2,
+  "strictSpecs": true,
+  "productCount": 11,
+  "rejectedCount": 403,
+  "countsBySlot": {
+    "case": 2,
+    "cpu": 2,
+    "motherboard": 1,
+    "psu": 2,
+    "ram": 2,
+    "storage": 2
+  },
+  "reviewSummary": {},
+  "rejected": [
+    {
+      "url": "https://www.alltec.cl/nvidia/2463-tv-asus-dual-geforce-rtx-5060-oc-edition-8gb-gddr7.html",
+      "reason": "Strict specs rejected: consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/water-cooling/2164-water-cooling-xigmatek-frozr-o-ii-240-argb-4711409540429.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/2415-tv-msi-geforce-rtx-5060-8g-ventus-2x-oc.html",
+      "reason": "Strict specs rejected: consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2437-256gb-ssd-sata3-6gbs-teamgroup-cx2-t253x6256g0c101.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2465-amd-ryzen-threadripper-9970x-40ghz-54ghz-turbo-thirty-two-core-tdp-350w-str5.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2420-amd-ryzen-5-9600-38ghz-52ghz-turbo-six-core-tdp-65w-am5.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2452-2tb-m2-pcie-gen3x4-ssd-kingspec-na900s-macbook-6950509911205.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2435-tv-sapphire-pulse-amd-radeon-rx-9060-xt-8gb.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/2464-mb-msi-b840m-gaming-wifi6e-am5-ddr5-amd-ryzen-9000.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/2453-mb-asus-b650m-ayw-wi-fi-am5-ddr5-ryzen-700080009000.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/2468-mb-msi-pro-h610m-s-ddr4-lga1700-intel-141312-generacion.html",
+      "reason": "Strict specs rejected: form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/2418-tv-msi-geforce-rtx-5070-12g-ventus-2x-oc.html",
+      "reason": "Strict specs rejected: consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/2392-9ghz-intel-core-ultra-7-265kf-55ghz-turbo-20c28t-33mb-cache-125w-lga1851.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/2422-mb-asus-prime-z890-p-wifi-lga1851-ddr5-intel-core-ultra-serie-2.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2458-amd-athlon-3000g-35ghz-dual-core-radeon-vega-3-tdp-35w-am4-box.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/2390-1ghz-intel-i7-14700-54ghz-turbo-20c28t-33mb-cache-65w-lga1700-14th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/2461-mb-asus-prime-a620m-k-am5-ddr5-ryzen-700080009000.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/2470-35ghz-intel-i9-11900k-53ghz-turbo-8c16t-16mb-cache-125w-lga1200-11va-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/asus/2425-mb-asus-tuf-gaming-b850m-plus-wifi-am5-ddr5-amd-ryzen-9000.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/2424-mb-asus-prime-b650m-a-ax6-ii-csm-am5-ddr5-ryzen-700080009000.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/2417-tv-msi-geforce-rtx-5060-ti-8g-gaming-oc.html",
+      "reason": "Strict specs rejected: consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/2414-mb-msi-pro-x870-p-wifi-am5-ddr5-ryzen-700080009000.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/2456-cargador-laptop-msi-ad200115m-20v-115a-230w-msi-gp66-leopard-.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/2471-7ghz-intel-i5-12600k-49ghz-turbo-10c16t-20mb-cache-125w150w-lga1700-12th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2475-asrock-radeon-rx-6500-xt-4gb-phantom-gaming.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2475-asrock-radeon-rx-6500-xt-4gb-phantom-gaming.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2440-2tb-ssd-sata3-6gbs-teamgroup-cx2-t253x6002t0c101.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2407-480gb-ssd-sata-6gbs-adata-su650-3d-asu650ss-480gt-r.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/asus/2423-mb-asus-prime-b840m-a-wifi-am5-ddr5-amd-ryzen-9000.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2451-1tb-m2-pcie-gen3x4-ssd-kingspec-na900s-macbook-6950509911199.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2409-tv-asus-prime-radeon-rx-9060-xt-8gb-gddr6-oc-edition.html",
+      "reason": "Strict specs rejected: consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2408-1tb-ssd-sata-6gbs-adata-su650-3d-asu650ss-1tt-r.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/2419-tv-msi-geforce-rtx-5080-16g-shadow-3x-oc.html",
+      "reason": "Strict specs rejected: consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/2469-msi-pro-h810m-b-wifi6e-lga1851-2x-ddr5-intel-core-ultra-processors-series-2.html",
+      "reason": "Strict specs rejected: form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2460-gabinete-antec-vcx20m-rgb-elite-black-m-atxitx.html",
+      "reason": "Strict specs rejected: tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/2391-4ghz-intel-i7-14700kf-56ghz-turbo-20c28t-33mb-cache-65w-lga1700-14th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2406-2tb-m2-2280-nvme-pcie-gen3x4-ssd-adata-legend-710-aleg-710-2tcs.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2410-tv-asus-prime-radeon-rx-9060-xt-16gb-gddr6-oc-edition.html",
+      "reason": "Strict specs rejected: consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2412-tv-asus-tuf-gaming-radeon-rx-9060-xt-16gb-gddr6-oc-edition.html",
+      "reason": "Strict specs rejected: consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2436-tv-sapphire-pulse-amd-radeon-rx-9060-xt-16gb.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2439-1tb-ssd-sata3-6gbs-teamgroup-cx2-t253x6001t0c101.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/2467-mb-asus-prime-b760m-k-d4-lga1700-ddr4-intel-141312-generacion.html",
+      "reason": "Strict specs rejected: form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2457-amd-ryzen-5-3400g-37ghz-42ghz-turbo-quad-core-radeon-vega-11-tdp-65w-am4.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2402-gabinete-xigmatek-pano-eatx-tg-curved-7x120mm-fan-argb.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1380-amd-ryzen-5-5600x-37ghz-46ghz-turbo-six-core-tdp-65w-am4-730143312042.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/1380-amd-ryzen-5-5600x-37ghz-46ghz-turbo-six-core-tdp-65w-am4-730143312042.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1797-amd-ryzen-5-5500-36ghz-42ghz-turbo-six-core-tdp-65w-am4-730143314121.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/688-240gb-ssd-crucial-bx500-ct240bx500ssd1.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/mecanicos-rigidos/676-hdd-1tb-35-seagate-barracuda-compute-7200rpm-sata-6gbs-st1000dm010.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2195-amd-ryzen-5-5600gt-36ghz-46ghz-turbo-six-core-tdp-65w-am4.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2195-amd-ryzen-5-5600gt-36ghz-46ghz-turbo-six-core-tdp-65w-am4.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1798-amd-ryzen-5-5600-35ghz-44ghz-turbo-six-core-tdp-65w-am4-730143314190.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/1798-amd-ryzen-5-5600-35ghz-44ghz-turbo-six-core-tdp-65w-am4-730143314190.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1655-amd-ryzen-7-5700g-38ghz-46ghz-turbo-octa-core-radeon-graphics-2000mhz-730143313377.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1794-amd-ryzen-7-5700x-34ghz-46ghz-turbo-octa-core-tdp-65w-am4-730143314275.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1829-amd-ryzen-5-4600g-37ghz-42ghz-turbo-six-core-radeon-graphics-1900mhz-730143313940.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/1829-amd-ryzen-5-4600g-37ghz-42ghz-turbo-six-core-radeon-graphics-1900mhz-730143313940.html"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/2378-tv-asus-tuf-gaming-geforce-rtx-4080-super-16-gb-gddr6x-oc-edition.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/2404-tv-msi-geforce-rtx-4080-super-16g-ventus-3x-oc.html",
+      "reason": "Strict specs rejected: consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1789-tv-gigabyte-aorus-radeon-rx-6900-xt-master-16g-gv-r69xtaorus-m-16gd-4719331310523.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2381-tv-sapphire-nitro-amd-radeon-rx-9070-xt-gaming-oc-16gb.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1781-tv-powercolor-red-devil-radeon-rx-6900-xt-16gb-gddr6-4713436173489.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2380-tv-sapphire-pure-amd-radeon-rx-9070-xt-gaming-oc-16gb.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2379-tv-sapphire-pulse-amd-radeon-rx-9070-xt-gaming-16gb.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/1899-tv-evga-geforce-rtx-3080-ftw3-ultra-gaming-12gb-gddr6-12g-p5-4877-kl.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/1898-tv-evga-geforce-rtx-3080-ftw3-ultra-gaming-lhr-10gb-gddr6-10g-p5-3897-kl.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2376-amd-ryzen-9-9950x3d-43ghz57ghz-turbo-sixteen-core-tdp-170w-am5.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1780-tv-powercolor-red-devil-radeon-rx-6800-xt-16gb-gddr6-4713436173120.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1777-tv-powercolor-red-devil-radeon-rx-6700-xt-12gb-gddr6-4713436173366.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1883-amd-ryzen-9-7950x-45ghz-57ghz-turbo-sixteen-core-tdp-170w-am5-730143314534.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/gabinetes/1820-kit-tornillos-pc-para-gabinete-30-pcs-aprox.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2036-tv-asrock-radeon-rx-6600-challenger-d-8gb.html",
+      "reason": "Strict specs rejected: consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/accesorios/1990-hikvision-mhb201-cofre-disco-duro-25-sata-usb-30.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/tarjetas-de-red-pci-pcie-usb-wireless/2218-adaptador-de-red-wifi-tp-link-archer-t2u-plus-ac600-24g5g-dual-band-usb.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2434-amd-ryzen-5-5500x3d-30ghz40ghz-turbo-96mb-3d-v-cache-six-core-tdp-105w-am4-730143316101.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/fuentes-de-poder/912-cooler-master-sleeved-extension-kit-black-blue-4719512073520.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/fuentes-de-poder/910-cooler-master-sleeved-extension-kit-black-green-4719512073544.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/fuentes-de-poder/1015-cooler-master-sleeved-extension-kit-black.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/placas-madre/1819-kit-cables-sata-3-de-2-unidades-color-negro.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/1464-fuente-de-poder-gigabyte-gp-p650b-650w-80p-bronze.html",
+      "reason": "Per-slot sample limit reached for psu"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/1531-fuente-de-poder-azza-650w-80-plus-bronze-4712839557278.html",
+      "reason": "Per-slot sample limit reached for psu"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/1596-fuente-de-poder-evga-700-bq-700w-80p-bronze-semi-modular-110-bq-0700-v1.html",
+      "reason": "Per-slot sample limit reached for psu"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/1694-fuente-de-poder-evga-700w-80p-white-100-w1-0700-k1-4250812424471.html",
+      "reason": "Strict specs rejected: eficiencia inferida"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/1885-fuente-de-poder-asus-asus-rog-strix-650g-650w-80p-gold-full-modular.html",
+      "reason": "Per-slot sample limit reached for psu"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/2010-fuente-de-poder-raidmax-vortex-700w-80p-bronze.html",
+      "reason": "Per-slot sample limit reached for psu"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/2085-fuente-de-poder-cooler-master-mwe-gold-1250-1250w-full-modular.html",
+      "reason": "Per-slot sample limit reached for psu"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/2286-fuente-de-poder-xigmatek-odin-600w-80-plus-white.html",
+      "reason": "Strict specs rejected: eficiencia inferida"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/2287-fuente-de-poder-xigmatek-odin-700w-80-plus-white.html",
+      "reason": "Strict specs rejected: eficiencia inferida"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/1597-fuente-de-poder-evga-850-bq-850w-80p-bronze-semi-modular-110-bq-0850-v5.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/potencia-realcertificadas/1597-fuente-de-poder-evga-850-bq-850w-80p-bronze-semi-modular-110-bq-0850-v5.html"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/1952-fuente-de-poder-evga-750-bq-80p-bronze-750w-110-bq-0750-v5-semi-modular.html",
+      "reason": "Per-slot sample limit reached for psu"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/1438-fuente-de-poder-xigmatek-spectrum-700-700w-80-plus-white.html",
+      "reason": "Strict specs rejected: eficiencia inferida"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/2291-fuente-de-poder-xigmatek-titan-1200w-80-plus-platinum-full-modular-gen-5.html",
+      "reason": "Per-slot sample limit reached for psu"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/1187-fuente-de-poder-cooler-master-mwe-white-650-650w.html",
+      "reason": "Strict specs rejected: eficiencia inferida"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/2289-fuente-de-poder-xigmatek-thor-t750m-v2-750w-80-plus-bronze-full-modular.html",
+      "reason": "Per-slot sample limit reached for psu"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/2290-fuente-de-poder-xigmatek-thor-t850m-v2-850w-80-plus-bronze-full-modular.html",
+      "reason": "Per-slot sample limit reached for psu"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/2168-fuente-de-poder-xigmatek-fury-1100w-80-plus-gold-full-modular-gen-5-4711409540535.html",
+      "reason": "Per-slot sample limit reached for psu"
+    },
+    {
+      "url": "https://www.alltec.cl/potencia-realcertificadas/2292-fuente-de-poder-xigmatek-hydra-m-750-750w-80-plus-bronze-full-modular.html",
+      "reason": "Per-slot sample limit reached for psu"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/1131-gabinete-gamemax-hot-wheels-silver-with-water-cooling.html",
+      "reason": "Strict specs rejected: tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/1412-gabinete-nox-infinity-alpha-tg-matx-1x120mm-fan.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/1518-gabinete-azza-cube-802-atx-argb-csaz-802f.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2266-gabinete-nox-infinity-zeta-tg-m-atx-1x120mm-fan.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2298-gabinete-xigmatek-nyx-ii-matx-tg-4xfan-frgb-120mm.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2306-gabinete-xigmatek-cubi-m-matx-tg-6xfan-120mm-argb.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/1382-gabinete-xigmatek-cockpit-atx-rainbow-fan-led.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2083-gabinete-cooler-master-haf-500-white-atx.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/1127-gabinete-gamemax-hot-wheels-black-with-water-cooling.html",
+      "reason": "Strict specs rejected: tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/1147-gabinete-xigmatek-beast-atx-rainbow-fan-led.html",
+      "reason": "Per-slot sample limit reached for case"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/1451-gabinete-xigmatek-zeus-atx-rainbow-fan-led.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/1452-gabinete-xigmatek-perseus-tg-atx-rainbow-fan-led.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/1515-gabinete-azza-iris-330-atx-argb.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2138-gabinete-xigmatek-hero-ii-air-3f-atx-black.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2145-gabinete-xigmatek-gaming-x-arctic-atx-4713436746737.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/1383-gabinete-xigmatek-poseidon-atx-rainbow-fan-strip-led.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2140-gabinete-xigmatek-gaming-x-atx-black-4713436746621.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2141-gabinete-xigmatek-blade-atx-black-4711409540887.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2307-gabinete-xigmatek-cubi-m-arctic-matx-tg-6x120mm-fan-argb.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2302-gabinete-xigmatek-elite-one-arctic-atx-tg-4x120mm-fan-argb.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2403-gabinete-xigmatek-pano-arctic-eatx-tg-curved-7x120mm-fan-argb.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/694-cooler-master-led-partition-plate-rgb-mc500-mc600.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2144-gabinete-xigmatek-gemini-ii-queen-matx-pink-4713436748663.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2301-gabinete-xigmatek-elite-one-atx-tg-4xfan-120mm-argb.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2308-gabinete-xigmatek-alphard-eatx-tg-6x120mm-fan-argb.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2146-gabinete-xigmatek-gaming-z-pro-eatx-black-4711409541761.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2149-gabinete-xigmatek-anubis-pro-4fx-eatx-black-4711409540788.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2161-gabinete-xigmatek-aqua-ultra-arctic-eatx-4711409540689.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2309-gabinete-xigmatek-alphard-arctic-eatx-tg-6x120mm-fan-argb.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2082-gabinete-cooler-master-cmp-520-atx.html",
+      "reason": "Per-slot sample limit reached for case"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2304-gabinete-xigmatek-gaming-y-pro-eatx-tg-4x120mm-argb.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2147-gabinete-xigmatek-aqua-m-matx-black-4711409540078.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2150-gabinete-xigmatek-endorphin-ultra-atx-black-4711409541327.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2151-gabinete-xigmatek-endorphin-ultra-arctic-atx-4711409541334.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2152-gabinete-xigmatek-aqua-ultra-eatx-black-4711409540672.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2305-gabinete-xigmatek-gaming-y-pro-arctic-eatx-tg-4x120mm-argb.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/sin-fuente-de-poder/2148-gabinete-xigmatek-lamiya-atx-argb-black-4713436748113.html",
+      "reason": "Strict specs rejected: largo maximo GPU inferido, tamano AIO inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/1995-mb-asrock-d1800m-intel-dual-core-j1800-241-ghz-2xddr3-udimm.html",
+      "reason": "Strict specs rejected: form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/2350-tv-asus-rog-strix-geforce-rtx-3070-ti-8g-gaming.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/1657-mb-msi-b550m-a-pro-am4-2xddr4-ryzen-5000.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-amd/1657-mb-msi-b550m-a-pro-am4-2xddr4-ryzen-5000.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/1960-mb-asrock-x570-phantom-gaming-4-wifi-ax-am4-ddr4-ryzen-300040005000.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/1963-mb-asrock-b650-pg-lightning-am5-ddr5-ryzen-7000.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-amd/1963-mb-asrock-b650-pg-lightning-am5-ddr5-ryzen-7000.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/1964-mb-asrock-b650e-pg-riptide-wifi-am5-ddr5-ryzen-7000.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-amd/1964-mb-asrock-b650e-pg-riptide-wifi-am5-ddr5-ryzen-7000.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/1965-mb-asrock-x670e-pg-lightning-am5-ddr5-ryzen-7000.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/2179-mb-asrock-b650m-hm2-am5-ddr5-ryzen-700080009000.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-amd/2179-mb-asrock-b650m-hm2-am5-ddr5-ryzen-700080009000.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/2186-mb-asrock-x670e-steel-legend-am5-ddr5-ryzen-70008000.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/2183-mb-asrock-b650-livemixer-am5-ddr5-ryzen-70008000.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/2184-mb-asrock-b650e-steel-legend-wifi-am5-ddr5-ryzen-70008000.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/2331-mb-asus-tuf-gaming-b450m-plus-ii-am4-ddr4-ryzen-5000.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/1823-mb-asus-prime-b550m-a-ac-am4-ddr4-ryzen-5000-wifi-ac-bt-50.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/2326-mb-msi-pro-a620m-e-am5-ddr5-ryzen-700080009000.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/1333-mb-asus-prime-a520m-k-am4-ddr4-ryzen-5000.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/1352-mb-gigabyte-b460m-aorus-elite-lga1200-intel-core-de-10a-generacion.html",
+      "reason": "Strict specs rejected: tipo de memoria inferido, form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/1956-mb-asrock-z790-pg-lightning-lga1700-ddr5-intel-1312-generacion.html",
+      "reason": "Strict specs rejected: form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/1957-mb-asrock-z790-pg-sonic-lga1700-ddr5-intel-1312-generacion.html",
+      "reason": "Strict specs rejected: form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/2137-mb-asus-prime-z690-p-d4-lga1700-intel-core-de-12a13a-generacion.html",
+      "reason": "Strict specs rejected: tipo de memoria inferido, form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/2187-mb-asrock-h510m-hdvm2-se-lga1200-ddr4-intel-1011-generacion.html",
+      "reason": "Strict specs rejected: form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/2189-mb-asrock-b760m-hm2-lga1700-ddr5-intel-141312-generacion.html",
+      "reason": "Strict specs rejected: form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/2191-mb-asrock-b760m-pg-lightning-wifi-lga1700-ddr5-intel-141312-generacion.html",
+      "reason": "Strict specs rejected: form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/2192-mb-asrock-z790-lightning-wifi-lga1700-ddr5-intel-141312-generacion.html",
+      "reason": "Strict specs rejected: form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/2193-mb-asrock-z690-extreme-wifi-6e-lga1700-ddr4-intel-141312-generacion.html",
+      "reason": "Strict specs rejected: form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/2250-mb-msi-pro-h610m-g-ddr4-lga1700-intel-141312-generacion.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-intel/2250-mb-msi-pro-h610m-g-ddr4-lga1700-intel-141312-generacion.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/2251-mb-asus-prime-h610m-k-d4-lga1700-ddr4-intel-141312-generacion.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-intel/2251-mb-asus-prime-h610m-k-d4-lga1700-ddr4-intel-141312-generacion.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/2393-mb-msi-pro-z890-p-wifi-lga1851-ddr5-intel-core-ultra-serie-2.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/1954-mb-asrock-b660m-hdv-lga1700-ddr4-intel-1312-generacion.html",
+      "reason": "Strict specs rejected: form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/1955-mb-asrock-z790m-pg-lightningd4-lga1700-ddr4-intel-1312-generacion.html",
+      "reason": "Strict specs rejected: form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/2399-mb-asrock-h370m-hdv-lga-1151.html",
+      "reason": "Strict specs rejected: tipo de memoria inferido, form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/1771-5ghz-intel-i9-11900kf-53ghz-turbo-8c16t-16mb-cache-125w-lga1200-11va-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/1848-6ghz-intel-i7-11700kf-50ghz-turbo-8c16t-16mb-cache-125w-lga1200-11va-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/1852-3ghz-intel-i3-12100-43ghz-turbo-4c8t-12mb-cache-65w-lga1700-12th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/2178-2ghz-intel-i9-14900kf-60ghz-turbo-24c32t-36mb-cache-125w253w-lga1700-14th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/2203-2ghz-intel-i9-14900k-60ghz-turbo-24c32t-36mb-cache-125w253w-lga1700-14th-generacion.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/intel/2203-2ghz-intel-i9-14900k-60ghz-turbo-24c32t-36mb-cache-125w253w-lga1700-14th-generacion.html"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/2257-1ghz-intel-i7-14700f-54ghz-turbo-20c28t-33mb-cache-65w-lga1700-14th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/1847-5ghz-intel-i5-12400-44ghz-turbo-6c12t-18mb-cache-65w-lga1700-12th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/1853-9ghz-intel-i5-11600k-49ghz-turbo-6c12t-12mb-cache-125w-lga1200-11th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/1851-3ghz-intel-i3-12100f-43ghz-turbo-4c8t-12mb-cache-65w-lga1700-sin-video-12th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/2421-4ghz-intel-core-ultra-5-235-50ghz-turbo-6c14t-24mb-cache-65w-lga1851.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/1394-9ghz-intel-i5-10400f-43ghz-turbo-6c12t-12mb-cache-65w-lga1200-10ma-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/2177-5ghz-intel-i5-14400f-47ghz-turbo-10c16t-20mb-cache-65w-lga1700-14th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/2022-5ghz-intel-i5-12400f-44ghz-turbo-6c12t-18mb-cache-65w117w-lga1700-12th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/1214-6ghz-intel-i3-10100-43ghz-turbo-4c8t-6mb-cache-65w-lga1200-10ma-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/1850-1ghz-intel-i7-12700f-49ghz-turbo-12c20t-25mb-cache-65w-lga1700-sin-video-12th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/2176-7ghz-intel-i5-12600kf-49ghz-turbo-10c16t-20mb-cache-125w150w-lga1700-12th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/2223-1ghz-intel-i7-12700-49ghz-turbo-12c20t-25mb-cache-65w-lga1700-intel-uhd-770-12th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/2224-6ghz-intel-i7-12700kf-50ghz-turbo-12c20t-25mb-cache-125w-lga1700-sin-video-12th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/intel/2204-5ghz-intel-i3-14100f-47ghz-turbo-4c8t-12mb-cache-58w-lga1700-sin-video-14th-generacion.html",
+      "reason": "Strict specs rejected: TDP inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1882-amd-ryzen-9-7900x-47ghz-56ghz-turbo-twelve-core-tdp-170w-am5-730143314558.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/1882-amd-ryzen-9-7900x-47ghz-56ghz-turbo-twelve-core-tdp-170w-am5-730143314558.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1948-amd-ryzen-5-7600-38ghz-51ghz-turbo-six-core-tdp-65w-am5-730143314572.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/1948-amd-ryzen-5-7600-38ghz-51ghz-turbo-six-core-tdp-65w-am5-730143314572.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1949-amd-ryzen-7-7700-38ghz-53ghz-turbo-octa-core-tdp-65w-am5-730143314497.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/1949-amd-ryzen-7-7700-38ghz-53ghz-turbo-octa-core-tdp-65w-am5-730143314497.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1950-amd-ryzen-9-7900-37ghz-54ghz-turbo-twelve-core-tdp-65w-am5-730143314466.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/1950-amd-ryzen-9-7900-37ghz-54ghz-turbo-twelve-core-tdp-65w-am5-730143314466.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2201-amd-ryzen-7-8700g-42ghz-51ghz-turbo-octa-core-tdp-65w-am5-amd-radeon-780m-graphics.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2201-amd-ryzen-7-8700g-42ghz-51ghz-turbo-octa-core-tdp-65w-am5-amd-radeon-780m-graphics.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2202-amd-ryzen-threadripper-7960x-42ghz-53ghz-turbo-twenty-four-core-tdp-350w-str5.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2202-amd-ryzen-threadripper-7960x-42ghz-53ghz-turbo-twenty-four-core-tdp-350w-str5.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2268-amd-ryzen-5-9600x-39ghz-54ghz-turbo-six-core-tdp-65w-am5.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2270-amd-ryzen-9-9900x-44ghz-56ghz-turbo-twelve-core-tdp-120w-am5.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2270-amd-ryzen-9-9900x-44ghz-56ghz-turbo-twelve-core-tdp-120w-am5.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2271-amd-ryzen-9-9950x-43ghz-57ghz-turbo-sixteen-core-tdp-170w-am5.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2271-amd-ryzen-9-9950x-43ghz-57ghz-turbo-sixteen-core-tdp-170w-am5.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2011-amd-ryzen-9-7900x3d-44ghz-56ghz-turbo-twelve-core-tdp-120w-am5-730143314916.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2011-amd-ryzen-9-7900x3d-44ghz-56ghz-turbo-twelve-core-tdp-120w-am5-730143314916.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2312-amd-ryzen-9-5900xt-33ghz-48ghz-turbo-sixteen-core-tdp-105w-am4.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2312-amd-ryzen-9-5900xt-33ghz-48ghz-turbo-sixteen-core-tdp-105w-am4.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1880-amd-ryzen-5-7600x-47ghz-53ghz-turbo-six-core-tdp-105w-am5-730143314442.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2383-la-dupla-perfecta-amd-ryzen-7-9800x3d-sapphire-nitro-amd-radeon-rx-9070-xt.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2383-la-dupla-perfecta-amd-ryzen-7-9800x3d-sapphire-nitro-amd-radeon-rx-9070-xt.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2384-la-dupla-perfecta-amd-ryzen-7-9800x3d-sapphire-pure-amd-radeon-rx-9070-xt.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2384-la-dupla-perfecta-amd-ryzen-7-9800x3d-sapphire-pure-amd-radeon-rx-9070-xt.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2385-la-dupla-perfecta-amd-ryzen-7-9800x3d-sapphire-pulse-amd-radeon-rx-9070-xt.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2385-la-dupla-perfecta-amd-ryzen-7-9800x3d-sapphire-pulse-amd-radeon-rx-9070-xt.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2348-amd-ryzen-7-9800x3d-47ghz-52ghz-turbo-octa-core-tdp-120w-am5.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2196-amd-ryzen-7-5700-37ghz-46ghz-turbo-octa-core-tdp-65w-am5.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2196-amd-ryzen-7-5700-37ghz-46ghz-turbo-octa-core-tdp-65w-am5.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2269-amd-ryzen-7-9700x-38ghz-55ghz-turbo-octa-core-tdp-65w-am5.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2375-amd-ryzen-9-9900x3d-44ghz55ghz-turbo-twelve-core-tdp-120w-am5.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1881-amd-ryzen-7-7700x-45ghz-54ghz-turbo-octa-core-tdp-105w-am5-730143314428.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2030-amd-ryzen-7-7800x3d-42ghz-50ghz-turbo-octa-core-tdp-120w-am5.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2313-amd-ryzen-7-5800xt-38ghz-48ghz-turbo-octa-core-tdp-105w-am4.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2313-amd-ryzen-7-5800xt-38ghz-48ghz-turbo-octa-core-tdp-105w-am4.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2339-amd-ryzen-5-5600xt-37ghz-47ghz-turbo-six-core-tdp-65w-am4.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2026-amd-ryzen-3-4100-mpk-38ghz-40ghz-turbo-quad-core-tdp-65w-am4-7123456789012.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2199-amd-ryzen-5-8500g-35ghz-50ghz-turbo-six-core-tdp-65w-am5-amd-radeon-740m-graphics.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2027-amd-ryzen-5-4500-mpk-36ghz-41ghz-turbo-six-core-tdp-65w-am4.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2244-amd-ryzen-7-8700f-41ghz-50ghz-turbo-octa-core-tdp-65w-am5.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2245-amd-ryzen-5-8400f-42ghz-47ghz-turbo-six-core-tdp-65w-am5.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1772-amd-ryzen-5-3500-mpk-36ghz-42ghz-turbo-six-core-tdp-65w-am4-8592978369668.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2338-amd-ryzen-5-5600t-35ghz-45ghz-turbo-six-core-tdp-65w-am4.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2338-amd-ryzen-5-5600t-35ghz-45ghz-turbo-six-core-tdp-65w-am4.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2194-amd-ryzen-3-5300g-40ghz-42ghz-turbo-quad-core-tdp-65w-am4.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1939-amd-ryzen-3-3200g-36ghz-40ghz-turbo-quad-core-tdp-65w-am4-radeon-vega-8-730143313100.html",
+      "reason": "Per-slot sample limit reached for cpu"
+    },
+    {
+      "url": "https://www.alltec.cl/cpu-cooler/1511-cpu-cooler-thermaltake-ux100-argb-lighting-cpu-intel-y-amd.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido, sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/cpu-cooler/56-cpu-cooler-intel-thermal-solution-ts15a-lga1151-5032037075824.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/cpu-cooler/2277-alseye-infinity-i600-b-tdp-280w-black-amdintel.html",
+      "reason": "Strict specs rejected: sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/cpu-cooler/2162-cpu-cooler-xigmatek-air-killer-pro-argb-4713436747895.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido, sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/cpu-cooler/2296-cpu-cooler-xigmatek-air-killer-s.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido, sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/cpu-cooler/2297-cpu-cooler-xigmatek-air-killer-s-arctic.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/cpu-cooler/2163-cpu-cooler-xigmatek-air-killer-pro-arctic-argb-4713436747925.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/cpu-cooler/2279-alseye-max-m90-b-black-tdp-185w-amdintel.html",
+      "reason": "Strict specs rejected: sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/cpu-cooler/2280-alseye-max-m90-w-white-tdp-185w-amdintel.html",
+      "reason": "Strict specs rejected: sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/cpu-cooler/2276-alseye-warriors-w90-amd-tdp-145w.html",
+      "reason": "Strict specs rejected: sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/chassis-fan-ventiladores/1009-cooler-master-masterfan-sf120r-rgb-mfx-b2dn-20npc-r1.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/chassis-fan-ventiladores/1010-cooler-master-masterfan-mf120r-argb-r4-120r-20pc-r1.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/chassis-fan-ventiladores/1011-cooler-master-masterfan-sf120r-argb-mfx-b2dn-20npa-r1.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/chassis-fan-ventiladores/1741-cooler-master-masterfan-pro-120-rgb-mfy-b2dn-13npc-r1.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/chassis-fan-ventiladores/1364-xigmatek-galaxy-ii-elite-ay120-argb.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/chassis-fan-ventiladores/1366-xigmatek-galaxy-ii-elite-pro-at120-argb.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/chassis-fan-ventiladores/1367-xigmatek-atlas-vga-holder-argb.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/chassis-fan-ventiladores/2093-kit-ventiladores-cooler-master-masterfan-mf120-halo-3-in-1-white.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/chassis-fan-ventiladores/2281-xigmatek-ay120-galaxy-elite-fan-argb-kit-3-en-1.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/chassis-fan-ventiladores/2094-ventilador-cooler-master-masterfan-halo-white.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/chassis-fan-ventiladores/2284-xigmatek-starlink-kit-3x120mm-fan-argb-easy-clip.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/chassis-fan-ventiladores/2282-xigmatek-starz-arctic-kit-3xfan-120mm-argb.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/chassis-fan-ventiladores/2283-xigmatek-starz-pro-kit-3xfan-120mm-argb.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/chassis-fan-ventiladores/2285-xigmatek-starlink-arctic-kit-3x120mm-fan-argb-easy-clip.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/router/2315-router-wireless-d-link-dir-819-ac750-dual-band.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/2069-8gb-ddr4-3200mhz-12v-cl22-crucial-ct8g4sfra32a-sodimm.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/2242-16gb-ddr4-3200mhz-12v-cl22-crucial-ct16g4sfra32a-sodimm.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/1702-tv-evga-geforce-gtx-1660-super-sc-ultra-gaming-6gb-gddr6-06g-p4-1068-kr.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1017-16gb-ddr4-3200mhz-8gbx2-gskill-flare-x-f4-3200c16d-16gfx.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1119-8gb-ddr4-3000mhz-cl16-a-data-xpg-spectrix-d41-ax4u300038g16-st41.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1190-8gb-ddr4-3000mhz-cl16-a-data-xpg-spectrix-d80-liquid-cooling-ax4u300038g16-sr80.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1302-8gb-ddr4-3200mhz-cl16-a-data-xpg-spectrix-d80-liquid-cooling-red-ax4u320038g16a-sr80.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1313-8gb-ddr4-3200mhz-cl16-a-data-xpg-spectrix-d41-red-ax4u320038g16a-sr41.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1315-8gb-ddr4-3200mhz-cl16-a-data-xpg-spectrix-d80-liquid-cooling-black-ax4u320038g16a-sb80.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1423-8gb-ddr4-3200mhz-crucial-ballistix-bl8g32c16u4b-black.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ddr4/1423-8gb-ddr4-3200mhz-crucial-ballistix-bl8g32c16u4b-black.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1558-16gb-kit-ddr4-3200mhz-2x8gb-crucial-ballistix-gaming-135v-black-bl2k8g32c16u4b.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1608-8gb-ddr4-3200mhz-cl16-135v-pny-xlr8-md8gd4320016xr.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1703-16gb-ddr4-3600mhz-gigabyte-aorus-rgb-gp-ar36c18s8k2hu416r-8gb-x-2.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ddr4/1703-16gb-ddr4-3600mhz-gigabyte-aorus-rgb-gp-ar36c18s8k2hu416r-8gb-x-2.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1704-16gb-ddr4-4400mhz-gigabyte-aorus-rgb-gp-ars16g44-8gb-x-2.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1906-8gb-ddr4-3000mhz-udimm-hikvision-u10-gray-hked4081cba2d1za2-8g-6941264070030.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ddr4/1906-8gb-ddr4-3000mhz-udimm-hikvision-u10-gray-hked4081cba2d1za2-8g-6941264070030.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1974-8gb-ddr4-3200mhz-kingston-fury-beast-cl17-kf432c16bb8.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1975-16gb-ddr4-3200mhz-kingston-fury-beast-cl17-kf432c16bb16.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1977-8gb-ddr4-3200mhz-kingston-fury-beast-rgb-cl17-kf432c16bba8.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1978-32gb-ddr4-3200mhz-kingston-fury-beast-rgb-cl17-kf432c16bba32.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ddr4/1978-32gb-ddr4-3200mhz-kingston-fury-beast-rgb-cl17-kf432c16bba32.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1980-16gb-ddr4-3600mhz-kingston-fury-renegade-cl16-kf436c16rb116.html",
+      "reason": "Strict specs rejected: cantidad de modulos inferida"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/1992-hikvision-kit-hatchback-16gb-ddr4-udimm-256gb-ssd-sata.html",
+      "reason": "Strict specs rejected: cantidad de modulos inferida"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/2035-16gb-ddr4-3600mhz-lexar-hades-rgb-kit-8gbx2.html",
+      "reason": "Strict specs rejected: cantidad de modulos inferida"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/2098-16gb-8gbx2-ddr4-3200mhz-teamgroup-t-force-delta-r-rgb-black-tf3d416g3200hc16cdc01.html",
+      "reason": "Strict specs rejected: cantidad de modulos inferida"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/2099-16gb-8gbx2-ddr4-3200mhz-teamgroup-t-force-delta-r-rgb-white-tf4d416g3200hc16cdc01.html",
+      "reason": "Strict specs rejected: cantidad de modulos inferida"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/2101-32gb-16gbx2-ddr4-3600mhz-teamgroup-t-force-delta-r-rgb-black-tf3d432g3600hc18jdc01.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ddr4/2101-32gb-16gbx2-ddr4-3600mhz-teamgroup-t-force-delta-r-rgb-black-tf3d432g3600hc18jdc01.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/2104-32gb-16gbx2-ddr4-3600mhz-teamgroup-t-force-delta-r-rgb-white-tf4d432g3600hc18jdc01.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ddr4/2104-32gb-16gbx2-ddr4-3600mhz-teamgroup-t-force-delta-r-rgb-white-tf4d432g3600hc18jdc01.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/2105-32gb-16gbx2-ddr4-3200mhz-teamgroup-t-force-xtreem-argb-black-tf10d432g3200hc16cdc01.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ddr4/2105-32gb-16gbx2-ddr4-3200mhz-teamgroup-t-force-xtreem-argb-black-tf10d432g3200hc16cdc01.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr4/2107-32gb-16gbx2-ddr4-3200mhz-teamgroup-t-force-xtreem-argb-white-tf13d432g3200hc16cdc01.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ddr4/2107-32gb-16gbx2-ddr4-3200mhz-teamgroup-t-force-xtreem-argb-white-tf13d432g3200hc16cdc01.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr3/1994-hikvision-kit-hatchback-8gb-ddr3-sodimm-256gb-ssd-sata.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ddr3/1994-hikvision-kit-hatchback-8gb-ddr3-sodimm-256gb-ssd-sata.html"
+    },
+    {
+      "url": "https://www.alltec.cl/water-cooling/1322-water-cooling-gigabyte-aorus-liquid-cooler-280.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido, sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/water-cooling/2086-water-cooling-cooler-master-masterliquid-ml240l-v2-rgb.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido, sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/water-cooling/2088-water-cooling-cooler-master-masterliquid-240l-core-argb.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido, sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/water-cooling/2089-water-cooling-cooler-master-masterliquid-ml360l-core-argb.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido, sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/water-cooling/2090-water-cooling-cooler-master-masterliquid-ml240-illusion-white-argb.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido, sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/water-cooling/1533-watercooling-azza-blizzard-120-argb.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido, sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/water-cooling/1534-watercooling-azza-blizzard-240-argb.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido, sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/water-cooling/1535-watercooling-azza-blizzard-360-argb.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido, sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/water-cooling/2087-water-cooling-cooler-master-masterliquid-ml240l-v2-rgb-white.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido, sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/water-cooling/1477-water-cooling-gamemax-iceburg-240.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido, sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/water-cooling/2166-water-cooling-xigmatek-frozr-o-ii-360-arctic-argb-4711409540450.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/water-cooling/2295-water-cooling-xigmatek-fenix-240-argb.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido, sockets compatibles inferidos"
+    },
+    {
+      "url": "https://www.alltec.cl/water-cooling/2165-water-cooling-xigmatek-frozr-o-ii-240-arctic-argb-4711409540436.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/water-cooling/2294-water-cooling-xigmatek-frozr-o-ii-360-argb.html",
+      "reason": "Strict specs rejected: TDP maximo cooler inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr3/1993-hikvision-kit-hatchback-8gb-ddr3-udimm-256gb-ssd-sata.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ddr3/1993-hikvision-kit-hatchback-8gb-ddr3-udimm-256gb-ssd-sata.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr5/1966-8gb-ddr5-5200mhz-kingston-fury-beast-cl40-kf552c40bb-8.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr5/1967-8gb-ddr5-5200mhz-kingston-fury-beast-rgb-cl40-kf552c40bba-8.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr5/1968-16gb-ddr5-4800mhz-kingston-fury-beast-cl38-kf548c38bb-16.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr5/1970-16gb-ddr5-4800mhz-kingston-fury-beast-rgb-cl38-kf548c38bba-16.html",
+      "reason": "Per-slot sample limit reached for ram"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr5/1971-32gb-ddr5-4800mhz-kingston-value-cl40-kvr48u40bd8-32.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ddr5/1971-32gb-ddr5-4800mhz-kingston-value-cl40-kvr48u40bd8-32.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr5/1972-32gb-ddr5-4800mhz-kingston-fury-beast-cl38-kf548c38bb-32.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ddr5/1972-32gb-ddr5-4800mhz-kingston-fury-beast-cl38-kf548c38bb-32.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr5/1973-32gb-ddr5-5200mhz-kingston-fury-beast-rgb-cl40-kf552c40bba-32.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ddr5/1973-32gb-ddr5-5200mhz-kingston-fury-beast-rgb-cl40-kf552c40bba-32.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr5/2109-32gb-16gbx2-ddr5-6000mhz-teamgroup-t-force-vulcan-amd-expo-flabd532g6000hc38adc01.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ddr5/2109-32gb-16gbx2-ddr5-6000mhz-teamgroup-t-force-vulcan-amd-expo-flabd532g6000hc38adc01.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr5/2110-32gb-16gbx2-ddr5-6000mhz-teamgroup-t-force-delta-rgb-amd-expo-ff7d532g6000hc38adc01.html",
+      "reason": "Strict specs rejected: cantidad de modulos inferida"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr5/2111-32gb-16gbx2-ddr5-6000mhz-teamgroup-t-force-delta-rgb-amd-expo-ff8d532g6000hc38adc01.html",
+      "reason": "Strict specs rejected: cantidad de modulos inferida"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr5/2112-32gb-16gbx2-ddr5-6000mhz-teamgroup-t-force-delta-rgb-intel-xmp-30-ff3d532g6000hc38adc01.html",
+      "reason": "Strict specs rejected: cantidad de modulos inferida"
+    },
+    {
+      "url": "https://www.alltec.cl/ddr5/2113-32gb-16gbx2-ddr5-6000mhz-teamgroup-t-force-delta-rgb-intel-xmp-30-ff4d532g6000hc38adc01.html",
+      "reason": "Strict specs rejected: cantidad de modulos inferida"
+    },
+    {
+      "url": "https://www.alltec.cl/externos-usb/1936-1tb-externo-usb30-fideco-1tb-y2u-u3-st1000.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2029-tv-amd-radeon-pro-w6400-4gb-gddr6-100-506189-72741931400.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2037-tv-msi-radeon-rx-6600-xt-mech-2x-8g-oc.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2037-tv-msi-radeon-rx-6600-xt-mech-2x-8g-oc.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2205-tv-asrock-amd-radeon-rx-7600-challenger-8gb-oc.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2205-tv-asrock-amd-radeon-rx-7600-challenger-8gb-oc.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2206-tv-asrock-amd-radeon-rx-7600-steel-legend-8gb-oc.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2206-tv-asrock-amd-radeon-rx-7600-steel-legend-8gb-oc.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2252-tv-sapphire-pulse-amd-radeon-rx-7700-xt-12gb.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2253-tv-sapphire-pulse-amd-radeon-rx-7900-gre-16gb.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2254-tv-sapphire-pure-amd-radeon-rx-7900-gre-16gb.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2382-tv-sapphire-pulse-amd-radeon-rx-7600-xt-16gb.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2382-tv-sapphire-pulse-amd-radeon-rx-7600-xt-16gb.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2411-tv-asus-dual-radeon-rx-9060-xt-8g-gddr6.html",
+      "reason": "Strict specs rejected: consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2136-tv-asrock-amd-radeon-rx-6600-challenger-white-8gb.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2136-tv-asrock-amd-radeon-rx-6600-challenger-white-8gb.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2258-tv-xfx-speedster-swft-210-amd-radeon-rx-6650-xt-8gb-gddr6.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1776-tv-powercolor-red-devil-radeon-rx-6600-xt-8gb-gddr6-4713436173625.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2441-tv-amd-radeon-pro-w6600-8gb-gddr6-100-506208.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2210-tv-sapphire-pulse-amd-radeon-rx-7600-8gb.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/757-500gb-ssd-teamgroup-t-force-delta-s-rgb-t253tr500g3c312-black.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ssd/757-500gb-ssd-teamgroup-t-force-delta-s-rgb-t253tr500g3c312-black.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/762-240gb-ssd-sata3-25-gigabyte-gp-gstfs31240gntd.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/1123-512gb-m2-2280-nvme-pcie-gen3x4-ssd-a-data-xpg-spectrix-s40g-rgb-as40g-512gt-c.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/1177-256gb-ssd-sata3-25-lexar-ns100-lns100-256rbna.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/1289-1tb-ssd-crucial-bx500-ct1000bx500ssd1.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/1879-500gb-ssd-crucial-bx500-ct500bx500ssd1.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/1910-512gb-ssd-25-sata30-6gbs-hikvision-e100-hs-ssd-e100-512g-550-mbs-read480-mbs-write.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ssd/1910-512gb-ssd-25-sata30-6gbs-hikvision-e100-hs-ssd-e100-512g-550-mbs-read480-mbs-write.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/1913-512gb-ssd-25-sata30-6gbs-hikvision-v300-v300-512g-ssd-560-mbs-read505-mbs-write.html",
+      "reason": "Strict specs rejected: tipo de memoria inferido, form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/1914-1024gb-ssd-25-sata30-6gbs-hikvision-v300-v300-1024g-ssd-560-mbs-read520-mbs-write.html",
+      "reason": "Strict specs rejected: tipo de memoria inferido, form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/1915-1024gb-m2-pcie-ssd-hikvision-disire-hs-ssd-desirep-1024g-2500-mbs-read1000-mbs-write.html",
+      "reason": "Strict specs rejected: tipo de memoria inferido, form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/1922-1024gb-m2-pcie-ssd-hikvision-g4000-hs-ssd-g4000-1024g-7450-mbs-read6600-mbs-write.html",
+      "reason": "Strict specs rejected: tipo de memoria inferido, form factor inferido"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/1984-512gb-m2-pcie-gen3x4-nvme-lexar-nm620-3300mb-read2400mb-write.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ssd/1984-512gb-m2-pcie-gen3x4-nvme-lexar-nm620-3300mb-read2400mb-write.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2119-4tb-ssd-nvme-teamgroup-t-force-cardea-z44q-m2-pcie-tm8fpq004t0c327.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2120-1tb-ssd-nvme-teamgroup-t-force-cardea-a440-pro-m2-pcie-tm8fpr001t0c129.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ssd/2120-1tb-ssd-nvme-teamgroup-t-force-cardea-a440-pro-m2-pcie-tm8fpr001t0c129.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2125-2tb-ssd-nvme-teamgroup-t-force-cardea-a440-pro-m2-pcie-tm8fpr002t0c129.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ssd/2125-2tb-ssd-nvme-teamgroup-t-force-cardea-a440-pro-m2-pcie-tm8fpr002t0c129.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2126-4tb-ssd-nvme-teamgroup-t-force-cardea-a440-pro-m2-pcie-tm8fpr004t0c129.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2320-512gb-m2-2280-nvme-pcie-gen3x4-ssd-adata-legend-710-aleg-710-512gcs-4711085937834.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2325-2048gb-m2-pcie-ssd-hikvision-g4000-hs-ssd-g4000-2048g-7450-mbs-read6600-mbs-write.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/ssd/2325-2048gb-m2-pcie-ssd-hikvision-g4000-hs-ssd-g4000-2048g-7450-mbs-read6600-mbs-write.html"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2337-1tb-m2-ssd-nvme-pcie-gen4-x4-crucial-e100-ct1000e100ssd8-5000mb4500mb.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/ssd/2454-480gb-m2-ssd-nvme-pcie-gen4-x4-crucial-e100-ct480e100ssd8c-4500mb-lectura2500mb-escritura.html",
+      "reason": "Per-slot sample limit reached for storage"
+    },
+    {
+      "url": "https://www.alltec.cl/memorias-flash-microsdsdcompac-flash/1926-128gb-hikvision-c1-series-micro-sd-tf-card-92mbs-read-hs-tf-c1std128g-.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/memorias-flash-microsdsdcompac-flash/1927-256gb-hikvision-c1-series-micro-sd-tf-card-92mbs-read-hs-tf-c1std256g-.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/pendrive/1933-64gb-pendrive-hikvision-m210s-usb32-hs-usb-m210s-64g.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/pendrive/1928-64gb-pendrive-hikvision-m200-usb30-hs-usb-m20064g.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/pendrive/1929-64gb-pendrive-hikvision-m210p-usb32-hs-usb-m210p.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/pendrive/1932-128gb-pendrive-hikvision-m210p-usb32-hs-usb-m210p-128g.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/pendrive/1934-128gb-pendrive-hikvision-m210s-usb32-hs-usb-m210s-128g.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/1701-tv-evga-geforce-gtx-1650-sc-ultra-gaming-4gb-gddr6-04g-p4-1257-kr.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/nvidia/1701-tv-evga-geforce-gtx-1650-sc-ultra-gaming-4gb-gddr6-04g-p4-1257-kr.html"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/1824-tv-gigabyte-geforce-gtx-1660-oc-6g-gv-n1660oc-6gd.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/1896-tv-evga-geforce-rtx-2060-xc-gaming-12gb-gddr6-12g-p4-2263-kr.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/nvidia/1896-tv-evga-geforce-rtx-2060-xc-gaming-12gb-gddr6-12g-p4-2263-kr.html"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/1897-tv-evga-geforce-rtx-3070-ftw3-ultra-gaming-8gb-gddr6-08g-p5-3767-kl.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/2065-tv-pny-nvidia-quadro-t1000-4gb-gddr6-vcnt1000-pb.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/2246-tv-asus-dual-geforce-rtx-3050-oc-edition-6gb-gddr6.html",
+      "reason": "Strict specs rejected: consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/2341-tv-asus-dual-geforce-rtx-4060-v2-oc-edition-8gb-gddr6.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/2366-tv-pny-nvidia-rtx-a2000-6gb-gddr6-vcnrtxa2000-pb.html",
+      "reason": "Strict specs rejected: largo fisico GPU inferido, consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/2413-tv-msi-geforce-rtx-4060-ventus-2x-black-8g-oc.html",
+      "reason": "Strict specs rejected: consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/nvidia/2416-tv-msi-geforce-rtx-5060-ti-8g-ventus-2x-plus.html",
+      "reason": "Strict specs rejected: consumo GPU estimado"
+    },
+    {
+      "url": "https://www.alltec.cl/estandar/1201-combo-genius-km-160-usb-teclado-y-mouse.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/membrana-embolo/1670-teclado-redragon-shiva-k512w-white-usb.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/membrana-embolo/1430-aula-gaming-k2-one-hand-keyboard.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/membrana-embolo/1900-kit-krom-kritic-rgb-rainbow-gaming-teclado-mouse-pad-auriculares-8436587970610.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/mecanicos/871-teclado-cooler-master-masterkeys-lite-l-espanol.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/mecanicos/1431-aula-gaming-f2088-mechanical-keyboard.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/mecanicos/1669-combo-redragon-kumara-rgb-k552-griffin-m607-usb.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/mecanicos/2327-teclado-krom-kasic-mechanical-rainbow-gaming-8436587972027.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/mecanicos/2329-teclado-krom-kernel-tkl-rgb-compact-mechanical-8436532166716.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/mecanicos/1833-mini-teclado-backlit-retroiluminado-android-pc-smart-tv.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/pc/1673-auriculares-redragon-pandora-h350w-white-usb.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/audio/936-auriculares-energy-sistem-headphones-dj2-black-mic.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/audio/937-auriculares-energy-sistem-earphones-5-ceramic.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/audio/1815-auriculares-awei-t20-bluetooth-v50-sport-earbuds-tws.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/pad-mouse/225-pad-mouse-gamer-sades-skadi-25cm-x-30cm.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/gamer/1030-mouse-gamer-msi-clutch-gm70-wireless-wired.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/gamer/1671-mouse-redragon-griffin-m607w-white-usb.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/gamer/1672-mouse-redragon-cobra-m711-usb.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/gamer/1700-mouse-gamer-msi-clutch-gm08-usb.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/gamer/1719-mouse-gamer-evga-x17-black-16000dpi-10-botones-903-w1-17bk-kr.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/gamer/2328-mouse-krom-kane-8436532169441.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/iluminacion/532-cooler-master-1-to-3-rgb-splitter-cable.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/iluminacion/707-controlador-coolermaster-c10l-rgb-con-cable-re-c10l-rgb-r1.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/sistemas-operativos/1947-microsoft-windows-11-pro-oem-espanol-64bits-fqc-10553.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/computadores-all-in-one-aio/2367-minipc-gigabyte-brix-i3-1220p-500gb-m2-nvme-16gb-ddr4.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/computadores-all-in-one-aio/2367-minipc-gigabyte-brix-i3-1220p-500gb-m2-nvme-16gb-ddr4.html"
+    },
+    {
+      "url": "https://www.alltec.cl/pos-punto-venta-etiquetas/1415-impresora-termica-pos-ocom-80g-80mm-usb-serial-lan.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/pos-punto-venta-etiquetas/1884-impresora-termica-star-tsp847ii-usb-44-112mm.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/tarjetas-de-red-pci-pcie-usb-wireless/616-adaptador-pcie1x-edup-ep-9607-wireless-dual-band-1200mbps-80211ac-24g58g.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/tarjetas-de-red-pci-pcie-usb-wireless/624-adaptador-usb-edup-ep-ms8551-wireless-6dbi-150mbps-80211n.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/tarjetas-de-red-pci-pcie-usb-wireless/625-adaptador-usb-edup-ep-n8553-nano-wireless-6dbi-150mbps-80211n.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/tarjetas-de-red-pci-pcie-usb-wireless/626-adaptador-pcie1x-edup-ep-9602-pci-e-gigalan-101001000mbps-rj45.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/tarjetas-de-red-pci-pcie-usb-wireless/2131-adaptador-de-red-wifi-tp-link-archer-tx55e-ax3000-wifi-6-bt-52-dual-band-pcie1x.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/tarjetas-de-red-pci-pcie-usb-wireless/2132-adaptador-de-red-wifi-tp-link-archer-t5e-ac1200-wifi-5-bt-42-dual-band-pcie1x.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/tarjetas-de-red-pci-pcie-usb-wireless/2216-adaptador-de-red-wifi-tp-link-archer-tx20e-ax1800-wifi-6-bt-52-dual-band-pcie1x.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/tarjetas-de-red-pci-pcie-usb-wireless/2217-adaptador-de-red-wifi-tp-link-archer-t4e-ac1200-wifi-524ghz-dual-band-pcie1x.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/tarjetas-de-red-pci-pcie-usb-wireless/2221-tred-tp-link-tg-3468-gigabit-pci-express-network-adapter.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/tarjetas-de-red-pci-pcie-usb-wireless/617-adaptador-usb30-edup-ep-ac1605-wireless-dual-band-1200mbps-80211ac-24g58g.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/tarjetas-de-red-pci-pcie-usb-wireless/1822-adaptador-wireless-d-link-dwa-548-pci-express-24ghz-300-mbps.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/tarjetas-de-red-pci-pcie-usb-wireless/2133-adaptador-de-red-wifi-tp-link-archer-t2u-nano-ac600-24g5g-dual-band-usb.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/tarjetas-de-red-pci-pcie-usb-wireless/2134-adaptador-bluetooth-tp-link-ub500-nano-bt-50-usb.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/tarjetas-de-red-pci-pcie-usb-wireless/2316-adaptador-wireless-d-link-dwa-131-usb-20-24ghz-300-mbps.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/lentes-para-computador/1079-lentes-gamer-gunnar-riot-bundle-onyx-amber.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/accesorios/1989-hikvision-hub-usb-ds401-4-en-1-usb-30.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/accesorios/1991-hikvision-cofre-disco-duro-m2-ssd-pcie-nvme-sata-usb-31.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/accesorios/2095-cooler-master-masteraccessory-cable-elevador-pcie-40-x16-200-mm-v2.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/accesorios/1987-hikvision-hdmi-vga-usb30-sdtf-card-usb-c-8-port-hub-multifuncion.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/accesorios/1988-hikvision-mhc201-cofre-disco-duro-25-sata-usb-31-usb-c.html",
+      "reason": "No component slot detected"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2207-tv-asrock-amd-radeon-rx-7900-xtx-phantom-gaming-24gb-oc.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2207-tv-asrock-amd-radeon-rx-7900-xtx-phantom-gaming-24gb-oc.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/2208-tv-asrock-amd-radeon-rx-7900-xtx-taichi-white-24gb-oc.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/2208-tv-asrock-amd-radeon-rx-7900-xtx-taichi-white-24gb-oc.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/2180-mb-asrock-b450m-hdv-r40-am4-ddr4-ryzen-5000.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-amd/2180-mb-asrock-b450m-hdv-r40-am4-ddr4-ryzen-5000.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/1281-mb-asrock-b550m-hdv-am4-ddr4-ryzen.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-amd/1281-mb-asrock-b550m-hdv-am4-ddr4-ryzen.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/1959-mb-asrock-b550m-steel-legend-am4-ddr4-ryzen-5000.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-amd/1959-mb-asrock-b550m-steel-legend-am4-ddr4-ryzen-5000.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/1958-mb-asrock-b550-phantom-gaming-4ac-am4-ddr4-ryzen-5000-wifi-bt.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-amd/1958-mb-asrock-b550-phantom-gaming-4ac-am4-ddr4-ryzen-5000-wifi-bt.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/2025-mb-asrock-x570-taichi-am4-ddr4-ryzen-300040005000.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-amd/2025-mb-asrock-x570-taichi-am4-ddr4-ryzen-300040005000.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/2182-mb-asrock-b650m-pg-lightning-wifi-am5-ddr5-ryzen-70008000.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-amd/2182-mb-asrock-b650m-pg-lightning-wifi-am5-ddr5-ryzen-70008000.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/1961-mb-asrock-b650m-pg-riptide-am5-ddr5-ryzen-70008000.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-amd/1961-mb-asrock-b650m-pg-riptide-am5-ddr5-ryzen-70008000.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-amd/1962-mb-asrock-b650m-pg-riptide-wifi-am5-ddr5-ryzen-70008000.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-amd/1962-mb-asrock-b650m-pg-riptide-wifi-am5-ddr5-ryzen-70008000.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/2188-mb-asrock-h610mac-lga1700-ddr4-intel-141312-generacion.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-intel/2188-mb-asrock-h610mac-lga1700-ddr4-intel-141312-generacion.html"
+    },
+    {
+      "url": "https://www.alltec.cl/para-intel/1095-mb-asrock-z390-steel-legend-lga1151.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/para-intel/1095-mb-asrock-z390-steel-legend-lga1151.html"
+    },
+    {
+      "url": "https://www.alltec.cl/amd/1654-amd-ryzen-5-5600g-39ghz-44ghz-turbo-six-core-radeon-graphics-1900mhz-730143313414.html",
+      "reason": "HTTP 404 for https://www.alltec.cl/amd/1654-amd-ryzen-5-5600g-39ghz-44ghz-turbo-six-core-radeon-graphics-1900mhz-730143313414.html"
+    }
+  ]
+}

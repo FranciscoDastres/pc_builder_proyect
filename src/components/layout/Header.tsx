@@ -1,3 +1,5 @@
+import { formatCLP } from '../../utils/format'
+
 interface Props {
   filledCount: number
   totalPrice: number
@@ -26,7 +28,7 @@ export function Header({ filledCount, totalPrice }: Props) {
           {totalPrice > 0 && (
             <div className="text-right">
               <div className="text-[10px] text-gray-400 uppercase tracking-wide">Total build</div>
-              <div className="text-xl font-black text-red-600">${totalPrice.toLocaleString()}</div>
+              <div className="text-xl font-black text-red-600">{formatCLP(totalPrice)}</div>
             </div>
           )}
         </div>
