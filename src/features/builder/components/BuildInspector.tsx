@@ -1,8 +1,8 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { slotLabels, slotOrder } from '../../../data/products'
 import type { CompatibilityIssue, ComponentSlot, Product, SelectedBuild } from '../../../types'
 import { formatCLP } from '../../../utils/format'
-import { createBuildSummaryText, createPrintableBuildSummaryDocument, createPrintableBuildSummaryHtml } from '../utils/buildSummaryText'
+import { createPrintableBuildSummaryDocument } from '../utils/buildSummaryText'
 
 interface Props {
   className?: string
@@ -12,9 +12,7 @@ interface Props {
   isComplete: boolean
   issues: CompatibilityIssue[]
   catalogSourceLabel: string
-  onRequestQuote: () => void
   onSaveBuild: () => void
-  onCreateShareUrl: () => string
 }
 
 function getIssueTone(severity: CompatibilityIssue['severity']): string {
@@ -40,23 +38,6 @@ function getStatusClass(issues: CompatibilityIssue[], isComplete: boolean): stri
   return 'border-green-200 bg-green-50 text-green-700'
 }
 
-async function copyText(text: string): Promise<void> {
-  if (navigator.clipboard?.writeText) {
-    await navigator.clipboard.writeText(text)
-    return
-  }
-
-  const textarea = document.createElement('textarea')
-  textarea.value = text
-  textarea.setAttribute('readonly', 'true')
-  textarea.style.position = 'fixed'
-  textarea.style.opacity = '0'
-  document.body.appendChild(textarea)
-  textarea.select()
-  document.execCommand('copy')
-  document.body.removeChild(textarea)
-}
-
 export function BuildInspector({
   className = '',
   build,
@@ -65,39 +46,18 @@ export function BuildInspector({
   isComplete,
   issues,
   catalogSourceLabel,
-  onRequestQuote,
   onSaveBuild,
-  onCreateShareUrl,
 }: Props) {
   const [actionStatus, setActionStatus] = useState<string | null>(null)
   const selectedProducts = slotOrder
     .map(slot => build[slot as ComponentSlot])
     .filter((product): product is Product => Boolean(product))
-  const errors = issues.filter(issue => issue.severity === 'error')
   const stockOk = selectedProducts.length > 0 && selectedProducts.every(product => product.inStock)
-  const summaryText = useMemo(() => createBuildSummaryText({
-    build,
-    issues,
-    totalPrice,
-    totalWatts,
-    catalogSource: catalogSourceLabel,
-  }), [build, catalogSourceLabel, issues, totalPrice, totalWatts])
-  const quoteDisabled = !isComplete || errors.length > 0
-
-  async function handleCopy() {
-    await copyText(summaryText)
-    setActionStatus('Resumen copiado')
-  }
 
   function handleSaveLocal() {
     onSaveBuild()
     openPdfPrintView()
     setActionStatus('Build guardada y PDF preparado')
-  }
-
-  async function handleCopyShareUrl() {
-    await copyText(onCreateShareUrl())
-    setActionStatus('Link de build copiado')
   }
 
   function openPdfPrintView() {
@@ -124,24 +84,13 @@ export function BuildInspector({
     setTimeout(() => printWindow.print(), 200)
   }
 
-  function handleExportText() {
+  function handlePrintSummary() {
     openPdfPrintView()
-    setActionStatus('PDF preparado para exportar')
+    setActionStatus('Vista PDF lista para imprimir')
   }
 
-  function handlePrintSummary() {
-    const printWindow = window.open('', '_blank', 'noopener,noreferrer')
-    if (!printWindow) {
-      setActionStatus('No se pudo abrir la vista imprimible')
-      return
-    }
-
-    printWindow.document.open()
-    printWindow.document.write(createPrintableBuildSummaryHtml(summaryText))
-    printWindow.document.close()
-    printWindow.focus()
-    printWindow.print()
-    setActionStatus('Vista imprimible abierta')
+  function handleQuoteSoon() {
+    setActionStatus('Solicitud comercial: se agrega próximamente.')
   }
 
   return (
@@ -212,22 +161,6 @@ export function BuildInspector({
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <button
           type="button"
-          onClick={handleCopy}
-          disabled={selectedProducts.length === 0}
-          className="rounded border border-gray-300 bg-white px-3 py-2 text-xs font-black uppercase tracking-wide text-gray-700 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:text-gray-400"
-        >
-          Copiar
-        </button>
-        <button
-          type="button"
-          onClick={handleExportText}
-          disabled={selectedProducts.length === 0}
-          className="rounded border border-gray-300 bg-white px-3 py-2 text-xs font-black uppercase tracking-wide text-gray-700 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:text-gray-400"
-        >
-          Exportar PDF
-        </button>
-        <button
-          type="button"
           onClick={handlePrintSummary}
           disabled={selectedProducts.length === 0}
           className="rounded border border-gray-300 bg-white px-3 py-2 text-xs font-black uppercase tracking-wide text-gray-700 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:text-gray-400"
@@ -244,19 +177,10 @@ export function BuildInspector({
         </button>
         <button
           type="button"
-          onClick={handleCopyShareUrl}
-          disabled={selectedProducts.length === 0}
+          onClick={handleQuoteSoon}
           className="rounded border border-gray-300 bg-white px-3 py-2 text-xs font-black uppercase tracking-wide text-gray-700 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:text-gray-400"
         >
-          Link
-        </button>
-        <button
-          type="button"
-          disabled={quoteDisabled}
-          onClick={onRequestQuote}
-          className="rounded bg-blue-600 px-3 py-2 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-gray-300"
-        >
-          Solicitar
+          Solicitar (Próximamente)
         </button>
       </div>
 
