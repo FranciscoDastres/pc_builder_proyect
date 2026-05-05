@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { slotLabels, slotOrder } from '../../../data/products'
 import type { CompatibilityIssue, ComponentSlot, Product, SelectedBuild } from '../../../types'
 import { formatCLP } from '../../../utils/format'
-import { createBuildSummaryText, createPrintableBuildSummaryHtml } from '../utils/buildSummaryText'
+import { createBuildSummaryText, createPrintableBuildSummaryDocument, createPrintableBuildSummaryHtml } from '../utils/buildSummaryText'
 
 interface Props {
   className?: string
@@ -91,7 +91,8 @@ export function BuildInspector({
 
   function handleSaveLocal() {
     onSaveBuild()
-    setActionStatus('Build guardada localmente')
+    openPdfPrintView()
+    setActionStatus('Build guardada y PDF preparado')
   }
 
   async function handleCopyShareUrl() {
@@ -99,15 +100,33 @@ export function BuildInspector({
     setActionStatus('Link de build copiado')
   }
 
+  function openPdfPrintView() {
+    const printWindow = window.open('', '_blank', 'noopener,noreferrer')
+    if (!printWindow) {
+      setActionStatus('No se pudo abrir la vista PDF')
+      return
+    }
+
+    const html = createPrintableBuildSummaryDocument({
+      build,
+      issues,
+      totalPrice,
+      totalWatts,
+      catalogSource: catalogSourceLabel,
+      statusLabel: getStatusLabel(isComplete, issues),
+      createdAt: new Date(),
+    })
+
+    printWindow.document.open()
+    printWindow.document.write(html)
+    printWindow.document.close()
+    printWindow.focus()
+    setTimeout(() => printWindow.print(), 200)
+  }
+
   function handleExportText() {
-    const blob = new Blob([summaryText], { type: 'text/plain;charset=utf-8' })
-    const url = URL.createObjectURL(blob)
-    const link = document.createElement('a')
-    link.href = url
-    link.download = `build-alltec-${new Date().toISOString().slice(0, 10)}.txt`
-    link.click()
-    URL.revokeObjectURL(url)
-    setActionStatus('Resumen exportado')
+    openPdfPrintView()
+    setActionStatus('PDF preparado para exportar')
   }
 
   function handlePrintSummary() {
@@ -205,7 +224,7 @@ export function BuildInspector({
           disabled={selectedProducts.length === 0}
           className="rounded border border-gray-300 bg-white px-3 py-2 text-xs font-black uppercase tracking-wide text-gray-700 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:text-gray-400"
         >
-          Exportar
+          Exportar PDF
         </button>
         <button
           type="button"
@@ -221,7 +240,7 @@ export function BuildInspector({
           disabled={selectedProducts.length === 0}
           className="rounded border border-gray-300 bg-white px-3 py-2 text-xs font-black uppercase tracking-wide text-gray-700 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:text-gray-400"
         >
-          Guardar
+          Guardar + PDF
         </button>
         <button
           type="button"
