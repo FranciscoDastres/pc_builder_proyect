@@ -109,7 +109,7 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
       </div>
 
       {/* Category tabs */}
-      <div className="flex gap-1.5 flex-wrap mb-3">
+      <div className="flex gap-1.5 flex-nowrap overflow-x-auto pb-1 mb-3 scrollbar-thin">
         <button
           onClick={() => changeCategory('all')}
           className={`px-3 py-1.5 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
@@ -145,7 +145,7 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
           </button>
         ))}
       </div>
-      <div className="mb-3 flex items-center gap-1.5 rounded border border-gray-200 bg-white p-1">
+      <div className="mb-3 flex items-center gap-1.5 rounded border border-gray-200 bg-white p-1 overflow-x-auto scrollbar-thin">
         <button
           type="button"
           onClick={() => setCpuPlatformFilter('all')}
