@@ -188,11 +188,10 @@ export default function Home() {
                 key={panel}
                 type="button"
                 onClick={() => setMobilePanel(panel as typeof mobilePanel)}
-                className={`rounded px-2 py-2 text-xs font-black uppercase tracking-wide ${
-                  mobilePanel === panel
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-600 hover:bg-gray-50'
-                }`}
+                className={`rounded px-2 py-2 text-xs font-black uppercase tracking-wide ${mobilePanel === panel
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-600 hover:bg-gray-50'
+                  }`}
               >
                 {label}
               </button>
@@ -203,7 +202,7 @@ export default function Home() {
         <main className="flex-1 max-w-[1800px] mx-auto w-full px-4 py-4 lg:py-5 grid grid-cols-1 lg:grid-cols-[minmax(360px,1fr)_420px_370px] gap-4 lg:gap-5 lg:h-[calc(100vh-93px)] lg:overflow-hidden">
           {/* Left: catalog */}
           <div className={`${mobilePanelClass('catalog')} min-h-[calc(100vh-210px)] lg:min-h-0 flex-col overflow-hidden`}>
-            <div className="mb-2.5">
+            <div className="mb-2.5 min-h-[34px]">
               <h2 className="m-0 text-sm font-black text-gray-800 uppercase tracking-wide">Componentes Disponibles</h2>
               <p className="m-0 text-[11px] text-gray-500">
                 {products.length > 0
@@ -242,11 +241,12 @@ export default function Home() {
           <div className={`${mobilePanelClass('build')} min-h-[calc(100vh-210px)] lg:min-h-0 overflow-y-auto flex-col gap-4`}>
             <div>
               <h2 className="m-0 text-sm font-black text-gray-800 uppercase tracking-wide">Tu Build</h2>
-              <p className="mt-0.5 mb-0 text-[11px] text-gray-500">
+              <p className="mt-0 mb-0 text-[11px] text-gray-500">
                 {!build.case ? 'Empieza seleccionando un gabinete' : 'Arrastra componentes a los slots'}
               </p>
             </div>
             <CaseSilhouette
+              className="lg:-mt-2"
               build={build}
               activeSlot={activeSlot}
               issues={issues}
@@ -264,7 +264,14 @@ export default function Home() {
 
           {/* Right: summary / inspector */}
           <div className={`${mobilePanelClass('summary')} min-h-[calc(100vh-210px)] lg:min-h-0 overflow-y-auto flex-col gap-4`}>
+            <div>
+              <h2 className="m-0 text-sm font-black text-gray-800 uppercase tracking-wide">Build Lista para revisar</h2>
+              <p className="mt-0 mb-0 text-[11px] text-gray-500">
+                {!build.case ? 'Empieza seleccionando un gabinete' : 'Arrastra componentes a los slots'}
+              </p>
+            </div>
             <BuildInspector
+              className="lg:-mt-2"
               build={build}
               totalPrice={totalPrice}
               totalWatts={totalWatts}
