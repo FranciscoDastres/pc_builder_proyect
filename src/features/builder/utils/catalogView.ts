@@ -4,6 +4,7 @@ import type { ComponentSlot, Product, SelectedBuild } from '../../../types'
 
 export type ActiveCatalogCategory = ComponentSlot | 'all' | 'review'
 export type CpuPlatformFilter = 'all' | 'intel' | 'amd'
+export type GpuBrandFilter = 'amd' | 'nvidia'
 
 export type CatalogRow =
   | { type: 'header'; slot: ComponentSlot; count: number; reviewCount: number }
@@ -14,6 +15,7 @@ export interface CatalogViewInput {
   build: SelectedBuild
   activeCategory: ActiveCatalogCategory
   cpuPlatformFilter: CpuPlatformFilter
+  gpuBrandFilter: GpuBrandFilter
   searchTerm: string
   showOutOfStock: boolean
   isCompatible: (product: Product, slot: ComponentSlot) => boolean
@@ -63,11 +65,17 @@ function belongsToPlatform(product: Product, cpuPlatformFilter: CpuPlatformFilte
   return true
 }
 
+function belongsToGpuBrand(product: Product, gpuBrandFilter: GpuBrandFilter): boolean {
+  if (product.slot !== 'gpu') return true
+  return product.brand.toLowerCase() === gpuBrandFilter
+}
+
 export function getCatalogView({
   products,
   build,
   activeCategory,
   cpuPlatformFilter,
+  gpuBrandFilter,
   searchTerm,
   showOutOfStock,
   isCompatible,
@@ -101,14 +109,17 @@ export function getCatalogView({
     const platformFilteredProducts = compatibleProducts.filter(product =>
       belongsToPlatform(product, cpuPlatformFilter, build)
     )
+    const gpuBrandFilteredProducts = platformFilteredProducts.filter(product =>
+      belongsToGpuBrand(product, gpuBrandFilter)
+    )
 
     acc[slot] = normalizedSearch
-      ? platformFilteredProducts.filter(product =>
+      ? gpuBrandFilteredProducts.filter(product =>
         product.name.toLowerCase().includes(normalizedSearch) ||
         product.brand.toLowerCase().includes(normalizedSearch) ||
         product.description.toLowerCase().includes(normalizedSearch)
       )
-      : platformFilteredProducts
+      : gpuBrandFilteredProducts
     return acc
   }, {})
 
