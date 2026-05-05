@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { cases, cpus, motherboards, rams } from '../../../data/products'
+import { cases, cpus, gpus, motherboards, rams } from '../../../data/products'
 import { canAddProduct } from '../../../domain'
 import type { Product, SelectedBuild } from '../../../types'
 import { getCatalogView } from './catalogView'
@@ -27,6 +27,7 @@ describe('getCatalogView', () => {
       build: emptyBuild,
       activeCategory: 'case',
       cpuPlatformFilter: 'all',
+      gpuBrandFilter: 'nvidia',
       searchTerm: '',
       showOutOfStock: false,
       isCompatible: (product, slot) => canAddProduct(emptyBuild, product, slot),
@@ -54,6 +55,7 @@ describe('getCatalogView', () => {
       build,
       activeCategory: 'motherboard',
       cpuPlatformFilter: 'all',
+      gpuBrandFilter: 'nvidia',
       searchTerm: '',
       showOutOfStock: false,
       isCompatible: (product, slot) => canAddProduct(build, product, slot),
@@ -86,6 +88,7 @@ describe('getCatalogView', () => {
       build: emptyBuild,
       activeCategory: 'review',
       cpuPlatformFilter: 'all',
+      gpuBrandFilter: 'nvidia',
       searchTerm: 'demo',
       showOutOfStock: false,
       isCompatible: (product, slot) => canAddProduct(emptyBuild, product, slot),
@@ -107,6 +110,7 @@ describe('getCatalogView', () => {
       build: emptyBuild,
       activeCategory: 'all',
       cpuPlatformFilter: 'amd',
+      gpuBrandFilter: 'nvidia',
       searchTerm: '',
       showOutOfStock: true,
       isCompatible: (product, slot) => canAddProduct(emptyBuild, product, slot),
@@ -116,6 +120,7 @@ describe('getCatalogView', () => {
       build: emptyBuild,
       activeCategory: 'all',
       cpuPlatformFilter: 'intel',
+      gpuBrandFilter: 'nvidia',
       searchTerm: '',
       showOutOfStock: true,
       isCompatible: (product, slot) => canAddProduct(emptyBuild, product, slot),
@@ -125,5 +130,34 @@ describe('getCatalogView', () => {
     expect(amdView.filteredBySlot.motherboard.map(product => product.id)).toEqual([amdBoard.id])
     expect(intelView.filteredBySlot.cpu.map(product => product.id)).toEqual([intelCpu.id])
     expect(intelView.filteredBySlot.motherboard.map(product => product.id)).toEqual([intelBoard.id])
+  })
+
+  it('filters gpu by AMD/NVIDIA brand', () => {
+    const amdGpu = gpus.find(gpu => gpu.brand === 'AMD') ?? gpus[0]
+    const nvidiaGpu = gpus.find(gpu => gpu.brand === 'NVIDIA') ?? gpus[0]
+
+    const amdView = getCatalogView({
+      products: [amdGpu, nvidiaGpu],
+      build: emptyBuild,
+      activeCategory: 'gpu',
+      cpuPlatformFilter: 'all',
+      gpuBrandFilter: 'amd',
+      searchTerm: '',
+      showOutOfStock: true,
+      isCompatible: (product, slot) => canAddProduct(emptyBuild, product, slot),
+    })
+    const nvidiaView = getCatalogView({
+      products: [amdGpu, nvidiaGpu],
+      build: emptyBuild,
+      activeCategory: 'gpu',
+      cpuPlatformFilter: 'all',
+      gpuBrandFilter: 'nvidia',
+      searchTerm: '',
+      showOutOfStock: true,
+      isCompatible: (product, slot) => canAddProduct(emptyBuild, product, slot),
+    })
+
+    expect(amdView.filteredBySlot.gpu.map(product => product.id)).toEqual([amdGpu.id])
+    expect(nvidiaView.filteredBySlot.gpu.map(product => product.id)).toEqual([nvidiaGpu.id])
   })
 })
