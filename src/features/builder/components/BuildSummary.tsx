@@ -36,7 +36,7 @@ export function BuildSummary({ build, totalPrice, totalWatts, isComplete, issues
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-2 gap-3 mb-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
         <div className="bg-gray-50 border border-gray-200 rounded p-3 text-center">
           <p className="text-[10px] text-gray-500 font-semibold uppercase tracking-wide mb-0.5">Precio Total</p>
           <p className="text-xl font-black text-red-600">{formatCLP(totalPrice)}</p>
