@@ -2,7 +2,7 @@ import { useMemo, useRef, useState, type UIEvent } from 'react'
 import { ProductCard } from './ProductCard'
 import { slotLabels, slotOrder } from '../../../data/products'
 import type { Product, ComponentSlot, SelectedBuild } from '../../../types'
-import { getCatalogView, type ActiveCatalogCategory, type CpuPlatformFilter } from '../utils/catalogView'
+import { getCatalogView, type ActiveCatalogCategory, type CpuPlatformFilter, type GpuBrandFilter } from '../utils/catalogView'
 
 interface Props {
   products: Product[]
@@ -24,6 +24,7 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
   const [search, setSearch] = useState('')
   const [activeCategory, setActiveCategory] = useState<ActiveCatalogCategory>('all')
   const [cpuPlatformFilter, setCpuPlatformFilter] = useState<CpuPlatformFilter>('all')
+  const [gpuBrandFilter, setGpuBrandFilter] = useState<GpuBrandFilter>('nvidia')
   const [showOutOfStock, setShowOutOfStock] = useState(false)
   const [scrollTop, setScrollTop] = useState(0)
   const [viewportHeight, setViewportHeight] = useState(0)
@@ -34,10 +35,11 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
     build,
     activeCategory,
     cpuPlatformFilter,
+    gpuBrandFilter,
     searchTerm: search,
     showOutOfStock,
     isCompatible,
-  }), [activeCategory, build, cpuPlatformFilter, isCompatible, products, search, showOutOfStock])
+  }), [activeCategory, build, cpuPlatformFilter, gpuBrandFilter, isCompatible, products, search, showOutOfStock])
   const {
     rows,
     outOfStockBySlot,
@@ -84,6 +86,8 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
 
   function changeCategory(category: ActiveCatalogCategory) {
     setActiveCategory(category)
+    if (category !== 'gpu') setGpuBrandFilter('nvidia')
+    if (category !== 'cpu' && category !== 'motherboard') setCpuPlatformFilter('all')
     setScrollTop(0)
     scrollRef.current?.scrollTo({ top: 0 })
   }
@@ -145,41 +149,69 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
           </button>
         ))}
       </div>
-      <div className="mb-3 flex items-center gap-1.5 rounded border border-gray-200 bg-white p-1 overflow-x-auto scrollbar-thin lg:overflow-visible">
-        <button
-          type="button"
-          onClick={() => setCpuPlatformFilter('all')}
+      {(activeCategory === 'cpu' || activeCategory === 'motherboard') && (
+        <div className="mb-3 flex items-center gap-1.5 rounded border border-gray-200 bg-white p-1 overflow-x-auto scrollbar-thin lg:overflow-visible">
+          <button
+            type="button"
+            onClick={() => setCpuPlatformFilter('all')}
             className={`px-3 py-1.5 lg:px-2.5 lg:py-1 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
-            cpuPlatformFilter === 'all'
-              ? 'bg-gray-700 text-white border-gray-700'
-              : 'bg-white text-gray-600 border-gray-300 hover:border-gray-500 hover:text-gray-800'
-          }`}
-        >
-          Todo
-        </button>
-        <button
-          type="button"
-          onClick={() => setCpuPlatformFilter('intel')}
+              cpuPlatformFilter === 'all'
+                ? 'bg-gray-700 text-white border-gray-700'
+                : 'bg-white text-gray-600 border-gray-300 hover:border-gray-500 hover:text-gray-800'
+            }`}
+          >
+            Todo
+          </button>
+          <button
+            type="button"
+            onClick={() => setCpuPlatformFilter('intel')}
             className={`px-3 py-1.5 lg:px-2.5 lg:py-1 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
-            cpuPlatformFilter === 'intel'
-              ? 'bg-blue-600 text-white border-blue-600'
-              : 'bg-white text-gray-600 border-gray-300 hover:border-blue-400 hover:text-blue-600'
-          }`}
-        >
-          Intel
-        </button>
-        <button
-          type="button"
-          onClick={() => setCpuPlatformFilter('amd')}
+              cpuPlatformFilter === 'intel'
+                ? 'bg-blue-600 text-white border-blue-600'
+                : 'bg-white text-gray-600 border-gray-300 hover:border-blue-400 hover:text-blue-600'
+            }`}
+          >
+            Intel
+          </button>
+          <button
+            type="button"
+            onClick={() => setCpuPlatformFilter('amd')}
             className={`px-3 py-1.5 lg:px-2.5 lg:py-1 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
-            cpuPlatformFilter === 'amd'
-              ? 'bg-red-600 text-white border-red-600'
-              : 'bg-white text-gray-600 border-gray-300 hover:border-red-400 hover:text-red-600'
-          }`}
-        >
-          AMD
-        </button>
-      </div>
+              cpuPlatformFilter === 'amd'
+                ? 'bg-red-600 text-white border-red-600'
+                : 'bg-white text-gray-600 border-gray-300 hover:border-red-400 hover:text-red-600'
+            }`}
+          >
+            AMD
+          </button>
+        </div>
+      )}
+      {activeCategory === 'gpu' && (
+        <div className="mb-3 flex items-center gap-1.5 rounded border border-gray-200 bg-white p-1 overflow-x-auto scrollbar-thin lg:overflow-visible">
+          <button
+            type="button"
+            onClick={() => setGpuBrandFilter('amd')}
+            className={`px-3 py-1.5 lg:px-2.5 lg:py-1 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
+              gpuBrandFilter === 'amd'
+                ? 'bg-red-600 text-white border-red-600'
+                : 'bg-white text-gray-600 border-gray-300 hover:border-red-400 hover:text-red-600'
+            }`}
+          >
+            AMD
+          </button>
+          <button
+            type="button"
+            onClick={() => setGpuBrandFilter('nvidia')}
+            className={`px-3 py-1.5 lg:px-2.5 lg:py-1 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
+              gpuBrandFilter === 'nvidia'
+                ? 'bg-green-600 text-white border-green-600'
+                : 'bg-white text-gray-600 border-gray-300 hover:border-green-400 hover:text-green-700'
+            }`}
+          >
+            NVIDIA
+          </button>
+        </div>
+      )}
 
       {outOfStockCount > 0 && (
         <label className="mb-3 flex items-center gap-2 rounded border border-gray-200 bg-white px-3 py-2 text-xs text-gray-600">
