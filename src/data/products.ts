@@ -134,33 +134,51 @@ export const motherboards: MotherboardProduct[] = [
 export const rams: RAMProduct[] = [
   {
     id: 'ram-001', slot: 'ram', brand: 'G.Skill', name: 'Trident Z5 RGB 32GB DDR5-6400',
-    price: 139, image: '📊', inStock: true, powerDraw: 5,
+    price: 169990, image: '📊', inStock: true, powerDraw: 5,
     description: '2x16GB DDR5-6400 CL32, EXPO y XMP 3.0',
     type: 'DDR5', frequency: 6400, capacity: 32, modules: 2, latency: 'CL32',
   },
   {
     id: 'ram-002', slot: 'ram', brand: 'Corsair', name: 'Dominator Titanium 64GB DDR5-6000',
-    price: 249, image: '📊', inStock: true, powerDraw: 8,
+    price: 279990, image: '📊', inStock: true, powerDraw: 8,
     description: '2x32GB DDR5-6000 CL30, EXPO y XMP 3.0',
     type: 'DDR5', frequency: 6000, capacity: 64, modules: 2, latency: 'CL30',
   },
   {
     id: 'ram-003', slot: 'ram', brand: 'Kingston', name: 'Fury Beast 16GB DDR5-5600',
-    price: 79, image: '📊', inStock: true, powerDraw: 4,
+    price: 89990, image: '📊', inStock: true, powerDraw: 4,
     description: '2x8GB DDR5-5600 CL40, entry-level DDR5',
     type: 'DDR5', frequency: 5600, capacity: 16, modules: 2, latency: 'CL40',
   },
   {
     id: 'ram-004', slot: 'ram', brand: 'G.Skill', name: 'Trident Z5 RGB 32GB DDR5-7200',
-    price: 179, image: '📊', inStock: true, powerDraw: 6,
+    price: 209990, image: '📊', inStock: true, powerDraw: 6,
     description: '2x16GB DDR5-7200 CL34, para overclockers extremos',
     type: 'DDR5', frequency: 7200, capacity: 32, modules: 2, latency: 'CL34',
   },
   {
     id: 'ram-005', slot: 'ram', brand: 'TeamGroup', name: 'T-Force Delta RGB 32GB DDR4-3600',
-    price: 89, image: '📊', inStock: true, powerDraw: 5,
+    price: 99990, image: '📊', inStock: true, powerDraw: 5,
     description: '2x16GB DDR4-3600 CL18, DDR4 de alto rendimiento',
     type: 'DDR4', frequency: 3600, capacity: 32, modules: 2, latency: 'CL18',
+  },
+  {
+    id: 'ram-006', slot: 'ram', brand: 'Corsair', name: 'Vengeance RGB 96GB DDR5-6400',
+    price: 899990, image: '📊', inStock: true, powerDraw: 10,
+    description: '2x48GB DDR5-6400 CL32 para workstation y creación',
+    type: 'DDR5', frequency: 6400, capacity: 96, modules: 2, latency: 'CL32',
+  },
+  {
+    id: 'ram-007', slot: 'ram', brand: 'Kingston', name: 'Fury Renegade 48GB DDR5-7200',
+    price: 679990, image: '📊', inStock: true, powerDraw: 7,
+    description: '2x24GB DDR5-7200 CL38 para gaming de alto rendimiento',
+    type: 'DDR5', frequency: 7200, capacity: 48, modules: 2, latency: 'CL38',
+  },
+  {
+    id: 'ram-008', slot: 'ram', brand: 'TeamGroup', name: 'T-Force Vulcan 32GB DDR5-6000',
+    price: 149990, image: '📊', inStock: true, powerDraw: 5,
+    description: '2x16GB DDR5-6000 CL30, opción equilibrada precio/rendimiento',
+    type: 'DDR5', frequency: 6000, capacity: 32, modules: 2, latency: 'CL30',
   },
 ]
 
