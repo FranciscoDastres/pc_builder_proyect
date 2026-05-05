@@ -140,6 +140,7 @@ function CaseHeader({ build, onRemove }: CaseHeaderProps) {
 }
 
 interface Props {
+  className?: string
   build: SelectedBuild
   activeSlot: ComponentSlot | null
   issues: Array<{ slot: ComponentSlot; severity: string }>
@@ -148,13 +149,13 @@ interface Props {
 
 const slotPositions = slotOrder as ComponentSlot[]
 
-export function CaseSilhouette({ build, activeSlot, issues, onRemove }: Props) {
+export function CaseSilhouette({ className = '', build, activeSlot, issues, onRemove }: Props) {
   const issueSlots = new Set(issues.filter(i => i.severity === 'error').map(i => i.slot))
 
   return (
-    <div className="flex flex-col h-full">
+    <div className={`flex flex-col ${className}`}>
       <CaseHeader build={build} onRemove={() => onRemove('case')} />
-      <div className="flex flex-col gap-1.5 flex-1">
+      <div className="flex flex-col gap-1.5">
         {slotPositions.filter(s => s !== 'case').map(slot => (
           <CaseSlot
             key={slot}
