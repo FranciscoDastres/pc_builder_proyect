@@ -100,13 +100,13 @@ function CaseHeader({ build, onRemove }: CaseHeaderProps) {
       ${!isOver && !pc ? 'border-gray-200' : ''}
     `}>
       {pc ? (
-        <div className="flex items-center gap-4">
-          <div className="shrink-0">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+          <div className="shrink-0 self-center sm:self-auto">
             <CaseIllustration caseId={pc.id} size="lg" />
           </div>
-          <div className="text-left flex-1">
+          <div className="text-left flex-1 min-w-0">
             <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">{pc.brand}</p>
-            <p className="text-sm font-black text-gray-800 leading-tight">{pc.name}</p>
+            <p className="text-sm font-black text-gray-800 leading-tight break-words">{pc.name}</p>
             <div className="flex flex-wrap gap-1.5 mt-2">
               {pc.formFactors.map(f => (
                 <span key={f} className="text-[10px] bg-blue-100 text-blue-700 px-2 py-0.5 rounded font-semibold">{f}</span>
