@@ -2,7 +2,7 @@ import { useMemo, useRef, useState, type UIEvent } from 'react'
 import { ProductCard } from './ProductCard'
 import { slotLabels, slotOrder } from '../../../data/products'
 import type { Product, ComponentSlot, SelectedBuild } from '../../../types'
-import { getCatalogView, type ActiveCatalogCategory } from '../utils/catalogView'
+import { getCatalogView, type ActiveCatalogCategory, type CpuPlatformFilter } from '../utils/catalogView'
 
 interface Props {
   products: Product[]
@@ -23,6 +23,7 @@ const OVERSCAN_ROWS = 6
 export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) {
   const [search, setSearch] = useState('')
   const [activeCategory, setActiveCategory] = useState<ActiveCatalogCategory>('all')
+  const [cpuPlatformFilter, setCpuPlatformFilter] = useState<CpuPlatformFilter>('all')
   const [showOutOfStock, setShowOutOfStock] = useState(false)
   const [scrollTop, setScrollTop] = useState(0)
   const [viewportHeight, setViewportHeight] = useState(0)
@@ -32,10 +33,11 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
     products,
     build,
     activeCategory,
+    cpuPlatformFilter,
     searchTerm: search,
     showOutOfStock,
     isCompatible,
-  }), [activeCategory, build, isCompatible, products, search, showOutOfStock])
+  }), [activeCategory, build, cpuPlatformFilter, isCompatible, products, search, showOutOfStock])
   const {
     rows,
     outOfStockBySlot,
@@ -142,6 +144,41 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
             <span className="hidden sm:inline">{slotLabels[slot]}</span>
           </button>
         ))}
+      </div>
+      <div className="mb-3 flex items-center gap-1.5 rounded border border-gray-200 bg-white p-1">
+        <button
+          type="button"
+          onClick={() => setCpuPlatformFilter('all')}
+          className={`px-3 py-1.5 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
+            cpuPlatformFilter === 'all'
+              ? 'bg-gray-700 text-white border-gray-700'
+              : 'bg-white text-gray-600 border-gray-300 hover:border-gray-500 hover:text-gray-800'
+          }`}
+        >
+          Todo
+        </button>
+        <button
+          type="button"
+          onClick={() => setCpuPlatformFilter('intel')}
+          className={`px-3 py-1.5 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
+            cpuPlatformFilter === 'intel'
+              ? 'bg-blue-600 text-white border-blue-600'
+              : 'bg-white text-gray-600 border-gray-300 hover:border-blue-400 hover:text-blue-600'
+          }`}
+        >
+          Intel
+        </button>
+        <button
+          type="button"
+          onClick={() => setCpuPlatformFilter('amd')}
+          className={`px-3 py-1.5 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
+            cpuPlatformFilter === 'amd'
+              ? 'bg-red-600 text-white border-red-600'
+              : 'bg-white text-gray-600 border-gray-300 hover:border-red-400 hover:text-red-600'
+          }`}
+        >
+          AMD
+        </button>
       </div>
 
       {outOfStockCount > 0 && (
