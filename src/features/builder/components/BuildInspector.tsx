@@ -125,7 +125,7 @@ export function BuildInspector({
 
   return (
     <div className="rounded border border-gray-200 bg-white shadow-sm p-4">
-      <div className="mb-4 flex items-start justify-between gap-3">
+      <div className="mb-4 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2.5 sm:gap-3">
         <div>
           <p className="text-[10px] text-gray-500 font-black uppercase tracking-widest">Resumen</p>
           <h2 className="mt-0.5 text-lg font-black text-gray-900">Build lista para revisar</h2>
@@ -135,7 +135,7 @@ export function BuildInspector({
         </span>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 mb-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
         <div className="rounded border border-gray-200 bg-gray-50 p-3">
           <p className="text-[10px] text-gray-500 uppercase font-bold">Total</p>
           <p className="text-lg font-black text-red-600">{formatCLP(totalPrice)}</p>
@@ -192,7 +192,7 @@ export function BuildInspector({
         )}
       </div>
 
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <button
           type="button"
           onClick={handleCopy}
