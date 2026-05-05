@@ -109,7 +109,7 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
       </div>
 
       {/* Category tabs */}
-      <div className="flex gap-1.5 flex-nowrap overflow-x-auto pb-1 mb-3 scrollbar-thin">
+      <div className="flex gap-1.5 flex-nowrap overflow-x-auto pb-1 mb-3 scrollbar-thin lg:flex-wrap lg:overflow-visible lg:pb-0">
         <button
           onClick={() => changeCategory('all')}
           className={`px-3 py-1.5 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
@@ -145,11 +145,11 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
           </button>
         ))}
       </div>
-      <div className="mb-3 flex items-center gap-1.5 rounded border border-gray-200 bg-white p-1 overflow-x-auto scrollbar-thin">
+      <div className="mb-3 flex items-center gap-1.5 rounded border border-gray-200 bg-white p-1 overflow-x-auto scrollbar-thin lg:overflow-visible">
         <button
           type="button"
           onClick={() => setCpuPlatformFilter('all')}
-          className={`px-3 py-1.5 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
+            className={`px-3 py-1.5 lg:px-2.5 lg:py-1 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
             cpuPlatformFilter === 'all'
               ? 'bg-gray-700 text-white border-gray-700'
               : 'bg-white text-gray-600 border-gray-300 hover:border-gray-500 hover:text-gray-800'
@@ -160,7 +160,7 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
         <button
           type="button"
           onClick={() => setCpuPlatformFilter('intel')}
-          className={`px-3 py-1.5 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
+            className={`px-3 py-1.5 lg:px-2.5 lg:py-1 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
             cpuPlatformFilter === 'intel'
               ? 'bg-blue-600 text-white border-blue-600'
               : 'bg-white text-gray-600 border-gray-300 hover:border-blue-400 hover:text-blue-600'
@@ -171,7 +171,7 @@ export function ProductCatalog({ products, build, isCompatible, onAdd }: Props) 
         <button
           type="button"
           onClick={() => setCpuPlatformFilter('amd')}
-          className={`px-3 py-1.5 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
+            className={`px-3 py-1.5 lg:px-2.5 lg:py-1 rounded text-xs font-bold uppercase tracking-wide transition-colors border ${
             cpuPlatformFilter === 'amd'
               ? 'bg-red-600 text-white border-red-600'
               : 'bg-white text-gray-600 border-gray-300 hover:border-red-400 hover:text-red-600'
