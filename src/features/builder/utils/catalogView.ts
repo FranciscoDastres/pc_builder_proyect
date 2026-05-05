@@ -3,6 +3,7 @@ import { getProductsForReview } from '../../../domain'
 import type { ComponentSlot, Product, SelectedBuild } from '../../../types'
 
 export type ActiveCatalogCategory = ComponentSlot | 'all' | 'review'
+export type CpuPlatformFilter = 'all' | 'intel' | 'amd'
 
 export type CatalogRow =
   | { type: 'header'; slot: ComponentSlot; count: number; reviewCount: number }
@@ -12,6 +13,7 @@ export interface CatalogViewInput {
   products: Product[]
   build: SelectedBuild
   activeCategory: ActiveCatalogCategory
+  cpuPlatformFilter: CpuPlatformFilter
   searchTerm: string
   showOutOfStock: boolean
   isCompatible: (product: Product, slot: ComponentSlot) => boolean
@@ -44,10 +46,28 @@ function groupProductsBySlot(products: Product[]): Record<string, Product[]> {
   return grouped
 }
 
+function belongsToPlatform(product: Product, cpuPlatformFilter: CpuPlatformFilter, build: SelectedBuild): boolean {
+  if (cpuPlatformFilter === 'all') return true
+  if (product.slot === 'cpu') {
+    return product.brand.toLowerCase() === cpuPlatformFilter
+  }
+  if (product.slot === 'motherboard') {
+    if (build.cpu) {
+      const expectedBrand = build.cpu.brand.toLowerCase()
+      return expectedBrand === cpuPlatformFilter && product.socket === build.cpu.socket
+    }
+    return cpuPlatformFilter === 'amd'
+      ? product.socket.startsWith('AM')
+      : product.socket.startsWith('LGA')
+  }
+  return true
+}
+
 export function getCatalogView({
   products,
   build,
   activeCategory,
+  cpuPlatformFilter,
   searchTerm,
   showOutOfStock,
   isCompatible,
@@ -78,14 +98,17 @@ export function getCatalogView({
         isCompatible(product, product.slot as ComponentSlot)
       )
       : reviewFilteredProducts
+    const platformFilteredProducts = compatibleProducts.filter(product =>
+      belongsToPlatform(product, cpuPlatformFilter, build)
+    )
 
     acc[slot] = normalizedSearch
-      ? compatibleProducts.filter(product =>
+      ? platformFilteredProducts.filter(product =>
         product.name.toLowerCase().includes(normalizedSearch) ||
         product.brand.toLowerCase().includes(normalizedSearch) ||
         product.description.toLowerCase().includes(normalizedSearch)
       )
-      : compatibleProducts
+      : platformFilteredProducts
     return acc
   }, {})
 
