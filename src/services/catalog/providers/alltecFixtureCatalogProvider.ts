@@ -1,7 +1,10 @@
 import type { Product } from '../../../types'
+import { rams as localMockRams } from '../../../data/products'
 import type { CatalogPage, ProductCatalogProvider, QuoteRevalidationResult } from '../types'
 
 export function createAlltecFixtureCatalogProvider(url = '/data/alltec-products.json'): ProductCatalogProvider {
+  const fallbackDdr5Rams = localMockRams.filter(ram => ram.type === 'DDR5')
+
   async function fetchProducts(): Promise<Product[]> {
     const response = await fetch(url, { cache: 'no-cache' })
     if (!response.ok) throw new Error(`No se pudo cargar fixture Alltec (${response.status})`)
@@ -13,21 +16,25 @@ export function createAlltecFixtureCatalogProvider(url = '/data/alltec-products.
   return {
     async listProducts(query): Promise<CatalogPage> {
       const products = await fetchProducts()
+      const productsWithFallback = [...products, ...fallbackDdr5Rams]
       const term = query?.search?.trim().toLowerCase()
 
       return {
         products: term
-          ? products.filter(product =>
+          ? productsWithFallback.filter(product =>
             product.name.toLowerCase().includes(term) ||
             product.brand.toLowerCase().includes(term) ||
             product.description.toLowerCase().includes(term),
           )
-          : products,
+          : productsWithFallback,
         source: 'alltec-fixture',
         fetchedAt: new Date().toISOString(),
         warnings: products.some(product => product.dataQuality && product.dataQuality !== 'ready')
-          ? ['Fixture demo contiene specs estimadas; no usar como fuente comercial final.']
-          : undefined,
+          ? [
+            'Fixture demo contiene specs estimadas; no usar como fuente comercial final.',
+            'Se agregaron kits DDR5 desde mock local para completar builds de demo.',
+          ]
+          : ['Se agregaron kits DDR5 desde mock local para completar builds de demo.'],
       }
     },
     async getProduct(externalId) {
