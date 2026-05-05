@@ -26,6 +26,7 @@ describe('getCatalogView', () => {
       products,
       build: emptyBuild,
       activeCategory: 'case',
+      cpuPlatformFilter: 'all',
       searchTerm: '',
       showOutOfStock: false,
       isCompatible: (product, slot) => canAddProduct(emptyBuild, product, slot),
@@ -52,6 +53,7 @@ describe('getCatalogView', () => {
       products: [compatibleBoard, incompatibleBoard],
       build,
       activeCategory: 'motherboard',
+      cpuPlatformFilter: 'all',
       searchTerm: '',
       showOutOfStock: false,
       isCompatible: (product, slot) => canAddProduct(build, product, slot),
@@ -83,6 +85,7 @@ describe('getCatalogView', () => {
       products: [readyRam, reviewRam],
       build: emptyBuild,
       activeCategory: 'review',
+      cpuPlatformFilter: 'all',
       searchTerm: 'demo',
       showOutOfStock: false,
       isCompatible: (product, slot) => canAddProduct(emptyBuild, product, slot),
@@ -91,5 +94,36 @@ describe('getCatalogView', () => {
     expect(view.reviewCount).toBe(1)
     expect(view.filteredBySlot.ram.map(product => product.id)).toEqual(['review-ram'])
     expect(view.rows.some(row => row.type === 'product' && row.product.id === 'review-ram')).toBe(true)
+  })
+
+  it('filters cpu and motherboard by Intel/AMD platform and socket', () => {
+    const intelCpu = cpus.find(cpu => cpu.brand === 'Intel') ?? cpus[0]
+    const amdCpu = cpus.find(cpu => cpu.brand === 'AMD') ?? cpus[0]
+    const intelBoard = motherboards.find(board => board.socket === intelCpu.socket) ?? motherboards[0]
+    const amdBoard = motherboards.find(board => board.socket === amdCpu.socket) ?? motherboards[0]
+
+    const amdView = getCatalogView({
+      products: [intelCpu, amdCpu, intelBoard, amdBoard],
+      build: emptyBuild,
+      activeCategory: 'all',
+      cpuPlatformFilter: 'amd',
+      searchTerm: '',
+      showOutOfStock: true,
+      isCompatible: (product, slot) => canAddProduct(emptyBuild, product, slot),
+    })
+    const intelView = getCatalogView({
+      products: [intelCpu, amdCpu, intelBoard, amdBoard],
+      build: emptyBuild,
+      activeCategory: 'all',
+      cpuPlatformFilter: 'intel',
+      searchTerm: '',
+      showOutOfStock: true,
+      isCompatible: (product, slot) => canAddProduct(emptyBuild, product, slot),
+    })
+
+    expect(amdView.filteredBySlot.cpu.map(product => product.id)).toEqual([amdCpu.id])
+    expect(amdView.filteredBySlot.motherboard.map(product => product.id)).toEqual([amdBoard.id])
+    expect(intelView.filteredBySlot.cpu.map(product => product.id)).toEqual([intelCpu.id])
+    expect(intelView.filteredBySlot.motherboard.map(product => product.id)).toEqual([intelBoard.id])
   })
 })
