@@ -61,9 +61,9 @@ export function BuildInspector({
   }
 
   function openPdfPrintView() {
-    const printWindow = window.open('', '_blank', 'noopener,noreferrer')
+    const printWindow = window.open('', '_blank')
     if (!printWindow) {
-      setActionStatus('No se pudo abrir la vista PDF')
+      setActionStatus('No se pudo abrir la vista PDF. Revisa bloqueador de ventanas emergentes.')
       return
     }
 
@@ -80,8 +80,22 @@ export function BuildInspector({
     printWindow.document.open()
     printWindow.document.write(html)
     printWindow.document.close()
-    printWindow.focus()
-    setTimeout(() => printWindow.print(), 200)
+
+    const triggerPrint = () => {
+      try {
+        printWindow.focus()
+        printWindow.print()
+      } catch {
+        setActionStatus('No se pudo abrir el diálogo de impresión PDF.')
+      }
+    }
+
+    if (printWindow.document.readyState === 'complete') {
+      triggerPrint()
+    } else {
+      printWindow.addEventListener('load', triggerPrint, { once: true })
+      setTimeout(triggerPrint, 500)
+    }
   }
 
   function handlePrintSummary() {
@@ -162,7 +176,6 @@ export function BuildInspector({
         <button
           type="button"
           onClick={handlePrintSummary}
-          disabled={selectedProducts.length === 0}
           className="rounded border border-gray-300 bg-white px-3 py-2 text-xs font-black uppercase tracking-wide text-gray-700 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:text-gray-400"
         >
           Imprimir
@@ -170,7 +183,6 @@ export function BuildInspector({
         <button
           type="button"
           onClick={handleSaveLocal}
-          disabled={selectedProducts.length === 0}
           className="rounded border border-gray-300 bg-white px-3 py-2 text-xs font-black uppercase tracking-wide text-gray-700 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:text-gray-400"
         >
           Guardar + PDF
