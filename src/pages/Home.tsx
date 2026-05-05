@@ -16,7 +16,6 @@ import { BuildInspector } from '../features/builder/components/BuildInspector'
 import { ProductCard } from '../features/builder/components/ProductCard'
 import { QuoteRequestForm } from '../features/builder/components/QuoteRequestForm'
 import {
-  createBuildShareUrl,
   decodeBuildSelection,
   loadBuildFromStorage,
   restoreBuildSelection,
@@ -78,10 +77,6 @@ export default function Home() {
     saveBuildToStorage(build)
   }, [build])
 
-  const createCurrentShareUrl = useCallback(() => {
-    return createBuildShareUrl(build, window.location.href)
-  }, [build])
-
   useEffect(() => {
     if (restoredBuild || products.length === 0) return
 
@@ -98,12 +93,6 @@ export default function Home() {
       setRestoredBuild(true)
     })
   }, [products, restoredBuild])
-
-  const openQuoteRequest = useCallback(() => {
-    setQuoteOpen(true)
-    setQuoteConfirmation(null)
-    setQuoteErrors([])
-  }, [])
 
   const cancelQuoteRequest = useCallback(() => {
     setQuoteOpen(false)
@@ -278,9 +267,7 @@ export default function Home() {
               isComplete={isComplete}
               issues={issues}
               catalogSourceLabel={sourceLabel}
-              onRequestQuote={openQuoteRequest}
               onSaveBuild={saveCurrentBuild}
-              onCreateShareUrl={createCurrentShareUrl}
             />
             <QuoteRequestForm
               open={quoteOpen}
