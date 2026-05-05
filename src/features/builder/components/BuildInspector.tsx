@@ -5,6 +5,7 @@ import { formatCLP } from '../../../utils/format'
 import { createBuildSummaryText, createPrintableBuildSummaryHtml } from '../utils/buildSummaryText'
 
 interface Props {
+  className?: string
   build: SelectedBuild
   totalPrice: number
   totalWatts: number
@@ -57,6 +58,7 @@ async function copyText(text: string): Promise<void> {
 }
 
 export function BuildInspector({
+  className = '',
   build,
   totalPrice,
   totalWatts,
@@ -124,12 +126,8 @@ export function BuildInspector({
   }
 
   return (
-    <div className="rounded border border-gray-200 bg-white shadow-sm p-4">
-      <div className="mb-4 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2.5 sm:gap-3">
-        <div>
-          <p className="text-[10px] text-gray-500 font-black uppercase tracking-widest">Resumen</p>
-          <h2 className="mt-0.5 text-lg font-black text-gray-900">Build lista para revisar</h2>
-        </div>
+    <div className={`rounded border border-gray-200 bg-white shadow-sm p-4 ${className}`}>
+      <div className="mb-3 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-3">
         <span className={`rounded border px-2.5 py-1 text-[10px] font-black uppercase tracking-wide ${getStatusClass(issues, isComplete)}`}>
           {getStatusLabel(isComplete, issues)}
         </span>
