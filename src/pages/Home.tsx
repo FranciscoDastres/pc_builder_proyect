@@ -177,7 +177,7 @@ export default function Home() {
       <div className="min-h-screen bg-gray-100 flex flex-col">
         <Header filledCount={filledCount} totalPrice={totalPrice} />
 
-        <div className="lg:hidden mx-auto w-full max-w-[1600px] px-4 pt-3">
+        <div className="lg:hidden sticky top-0 z-20 mx-auto w-full max-w-[1600px] px-4 pt-3 pb-2 bg-gray-100/95 backdrop-blur supports-[backdrop-filter]:bg-gray-100/80">
           <div className="grid grid-cols-3 rounded border border-gray-200 bg-white p-1 shadow-sm">
             {[
               ['catalog', 'Catálogo'],
@@ -200,9 +200,9 @@ export default function Home() {
           </div>
         </div>
 
-        <main className="flex-1 max-w-[1800px] mx-auto w-full px-4 py-5 grid grid-cols-1 lg:grid-cols-[minmax(360px,1fr)_420px_370px] gap-5 lg:h-[calc(100vh-93px)] lg:overflow-hidden">
+        <main className="flex-1 max-w-[1800px] mx-auto w-full px-4 py-4 lg:py-5 grid grid-cols-1 lg:grid-cols-[minmax(360px,1fr)_420px_370px] gap-4 lg:gap-5 lg:h-[calc(100vh-93px)] lg:overflow-hidden">
           {/* Left: catalog */}
-          <div className={`${mobilePanelClass('catalog')} min-h-[calc(100vh-172px)] lg:min-h-0 flex-col overflow-hidden`}>
+          <div className={`${mobilePanelClass('catalog')} min-h-[calc(100vh-210px)] lg:min-h-0 flex-col overflow-hidden`}>
             <div className="mb-2.5">
               <h2 className="m-0 text-sm font-black text-gray-800 uppercase tracking-wide">Componentes Disponibles</h2>
               <p className="m-0 text-[11px] text-gray-500">
@@ -239,7 +239,7 @@ export default function Home() {
           </div>
 
           {/* Center: builder */}
-          <div className={`${mobilePanelClass('build')} min-h-[calc(100vh-172px)] lg:min-h-0 overflow-y-auto flex-col gap-4`}>
+          <div className={`${mobilePanelClass('build')} min-h-[calc(100vh-210px)] lg:min-h-0 overflow-y-auto flex-col gap-4`}>
             <div>
               <h2 className="m-0 text-sm font-black text-gray-800 uppercase tracking-wide">Tu Build</h2>
               <p className="mt-0.5 mb-0 text-[11px] text-gray-500">
@@ -263,7 +263,7 @@ export default function Home() {
           </div>
 
           {/* Right: summary / inspector */}
-          <div className={`${mobilePanelClass('summary')} min-h-[calc(100vh-172px)] lg:min-h-0 overflow-y-auto flex-col gap-4`}>
+          <div className={`${mobilePanelClass('summary')} min-h-[calc(100vh-210px)] lg:min-h-0 overflow-y-auto flex-col gap-4`}>
             <BuildInspector
               build={build}
               totalPrice={totalPrice}
